@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BC85FC21EB3866700BC47AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FC11EB3866700BC47AE /* AppDelegate.swift */; };
+		3BC85FC41EB3866700BC47AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FC31EB3866700BC47AE /* ViewController.swift */; };
+		3BC85FC61EB3866700BC47AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC85FC51EB3866700BC47AE /* Assets.xcassets */; };
+		3BC85FC91EB3866700BC47AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC85FC71EB3866700BC47AE /* Main.storyboard */; };
+		3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FD31EB3866700BC47AE /* KeenowTests.swift */; };
+		3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BC85FD01EB3866700BC47AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC85FBD1EB3866700BC47AE;
+			remoteInfo = Keenow;
+		};
+		3BC85FDB1EB3866700BC47AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC85FBD1EB3866700BC47AE;
+			remoteInfo = Keenow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BC85FBE1EB3866700BC47AE /* Keenow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keenow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC85FC11EB3866700BC47AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BC85FC31EB3866700BC47AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BC85FC51EB3866700BC47AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BC85FC81EB3866700BC47AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3BC85FCA1EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC85FCF1EB3866700BC47AE /* KeenowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeenowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC85FD31EB3866700BC47AE /* KeenowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowTests.swift; sourceTree = "<group>"; };
+		3BC85FD51EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC85FDA1EB3866700BC47AE /* KeenowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeenowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowUITests.swift; sourceTree = "<group>"; };
+		3BC85FE01EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BC85FBB1EB3866700BC47AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FCC1EB3866700BC47AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FD71EB3866700BC47AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BC85FB51EB3866700BC47AE = {
+			isa = PBXGroup;
+			children = (
+				3BC85FC01EB3866700BC47AE /* Keenow */,
+				3BC85FD21EB3866700BC47AE /* KeenowTests */,
+				3BC85FDD1EB3866700BC47AE /* KeenowUITests */,
+				3BC85FBF1EB3866700BC47AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BC85FBF1EB3866700BC47AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FBE1EB3866700BC47AE /* Keenow.app */,
+				3BC85FCF1EB3866700BC47AE /* KeenowTests.xctest */,
+				3BC85FDA1EB3866700BC47AE /* KeenowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BC85FC01EB3866700BC47AE /* Keenow */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FC11EB3866700BC47AE /* AppDelegate.swift */,
+				3BC85FC31EB3866700BC47AE /* ViewController.swift */,
+				3BC85FC51EB3866700BC47AE /* Assets.xcassets */,
+				3BC85FC71EB3866700BC47AE /* Main.storyboard */,
+				3BC85FCA1EB3866700BC47AE /* Info.plist */,
+			);
+			path = Keenow;
+			sourceTree = "<group>";
+		};
+		3BC85FD21EB3866700BC47AE /* KeenowTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FD31EB3866700BC47AE /* KeenowTests.swift */,
+				3BC85FD51EB3866700BC47AE /* Info.plist */,
+			);
+			path = KeenowTests;
+			sourceTree = "<group>";
+		};
+		3BC85FDD1EB3866700BC47AE /* KeenowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */,
+				3BC85FE01EB3866700BC47AE /* Info.plist */,
+			);
+			path = KeenowUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BC85FBD1EB3866700BC47AE /* Keenow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC85FE31EB3866700BC47AE /* Build configuration list for PBXNativeTarget "Keenow" */;
+			buildPhases = (
+				3BC85FBA1EB3866700BC47AE /* Sources */,
+				3BC85FBB1EB3866700BC47AE /* Frameworks */,
+				3BC85FBC1EB3866700BC47AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keenow;
+			productName = Keenow;
+			productReference = 3BC85FBE1EB3866700BC47AE /* Keenow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BC85FCE1EB3866700BC47AE /* KeenowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC85FE61EB3866700BC47AE /* Build configuration list for PBXNativeTarget "KeenowTests" */;
+			buildPhases = (
+				3BC85FCB1EB3866700BC47AE /* Sources */,
+				3BC85FCC1EB3866700BC47AE /* Frameworks */,
+				3BC85FCD1EB3866700BC47AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BC85FD11EB3866700BC47AE /* PBXTargetDependency */,
+			);
+			name = KeenowTests;
+			productName = KeenowTests;
+			productReference = 3BC85FCF1EB3866700BC47AE /* KeenowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BC85FD91EB3866700BC47AE /* KeenowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC85FE91EB3866700BC47AE /* Build configuration list for PBXNativeTarget "KeenowUITests" */;
+			buildPhases = (
+				3BC85FD61EB3866700BC47AE /* Sources */,
+				3BC85FD71EB3866700BC47AE /* Frameworks */,
+				3BC85FD81EB3866700BC47AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BC85FDC1EB3866700BC47AE /* PBXTargetDependency */,
+			);
+			name = KeenowUITests;
+			productName = KeenowUITests;
+			productReference = 3BC85FDA1EB3866700BC47AE /* KeenowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BC85FB61EB3866700BC47AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Enrico Ghirardi";
+				TargetAttributes = {
+					3BC85FBD1EB3866700BC47AE = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VJ8592T25A;
+						ProvisioningStyle = Automatic;
+					};
+					3BC85FCE1EB3866700BC47AE = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VJ8592T25A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3BC85FBD1EB3866700BC47AE;
+					};
+					3BC85FD91EB3866700BC47AE = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VJ8592T25A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3BC85FBD1EB3866700BC47AE;
+					};
+				};
+			};
+			buildConfigurationList = 3BC85FB91EB3866700BC47AE /* Build configuration list for PBXProject "Keenow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BC85FB51EB3866700BC47AE;
+			productRefGroup = 3BC85FBF1EB3866700BC47AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BC85FBD1EB3866700BC47AE /* Keenow */,
+				3BC85FCE1EB3866700BC47AE /* KeenowTests */,
+				3BC85FD91EB3866700BC47AE /* KeenowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BC85FBC1EB3866700BC47AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC85FC61EB3866700BC47AE /* Assets.xcassets in Resources */,
+				3BC85FC91EB3866700BC47AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FCD1EB3866700BC47AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FD81EB3866700BC47AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BC85FBA1EB3866700BC47AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC85FC41EB3866700BC47AE /* ViewController.swift in Sources */,
+				3BC85FC21EB3866700BC47AE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FCB1EB3866700BC47AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FD61EB3866700BC47AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BC85FD11EB3866700BC47AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC85FBD1EB3866700BC47AE /* Keenow */;
+			targetProxy = 3BC85FD01EB3866700BC47AE /* PBXContainerItemProxy */;
+		};
+		3BC85FDC1EB3866700BC47AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC85FBD1EB3866700BC47AE /* Keenow */;
+			targetProxy = 3BC85FDB1EB3866700BC47AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BC85FC71EB3866700BC47AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BC85FC81EB3866700BC47AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BC85FE11EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3BC85FE21EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		3BC85FE41EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = Keenow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.Keenow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3BC85FE51EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = Keenow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.Keenow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3BC85FE71EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keenow.app/Contents/MacOS/Keenow";
+			};
+			name = Debug;
+		};
+		3BC85FE81EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keenow.app/Contents/MacOS/Keenow";
+			};
+			name = Release;
+		};
+		3BC85FEA1EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Keenow;
+			};
+			name = Debug;
+		};
+		3BC85FEB1EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Keenow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BC85FB91EB3866700BC47AE /* Build configuration list for PBXProject "Keenow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FE11EB3866700BC47AE /* Debug */,
+				3BC85FE21EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC85FE31EB3866700BC47AE /* Build configuration list for PBXNativeTarget "Keenow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FE41EB3866700BC47AE /* Debug */,
+				3BC85FE51EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3BC85FE61EB3866700BC47AE /* Build configuration list for PBXNativeTarget "KeenowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FE71EB3866700BC47AE /* Debug */,
+				3BC85FE81EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3BC85FE91EB3866700BC47AE /* Build configuration list for PBXNativeTarget "KeenowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FEA1EB3866700BC47AE /* Debug */,
+				3BC85FEB1EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BC85FB61EB3866700BC47AE /* Project object */;
+}
