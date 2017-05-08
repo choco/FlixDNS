@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0E4DEE1EB38A7800534117 /* StatusBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E4DED1EB38A7800534117 /* StatusBarMenuController.swift */; };
 		3BC85FC21EB3866700BC47AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FC11EB3866700BC47AE /* AppDelegate.swift */; };
-		3BC85FC41EB3866700BC47AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FC31EB3866700BC47AE /* ViewController.swift */; };
 		3BC85FC61EB3866700BC47AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC85FC51EB3866700BC47AE /* Assets.xcassets */; };
-		3BC85FC91EB3866700BC47AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC85FC71EB3866700BC47AE /* Main.storyboard */; };
 		3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FD31EB3866700BC47AE /* KeenowTests.swift */; };
 		3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */; };
+		3BC85FED1EB386B000BC47AE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC85FEC1EB386B000BC47AE /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B0E4DED1EB38A7800534117 /* StatusBarMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarMenuController.swift; sourceTree = "<group>"; };
 		3BC85FBE1EB3866700BC47AE /* Keenow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keenow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FC11EB3866700BC47AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BC85FC31EB3866700BC47AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3BC85FC51EB3866700BC47AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3BC85FC81EB3866700BC47AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BC85FCA1EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BC85FCF1EB3866700BC47AE /* KeenowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeenowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FD31EB3866700BC47AE /* KeenowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowTests.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		3BC85FDA1EB3866700BC47AE /* KeenowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeenowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowUITests.swift; sourceTree = "<group>"; };
 		3BC85FE01EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC85FEC1EB386B000BC47AE /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +95,11 @@
 		3BC85FC01EB3866700BC47AE /* Keenow */ = {
 			isa = PBXGroup;
 			children = (
-				3BC85FC11EB3866700BC47AE /* AppDelegate.swift */,
-				3BC85FC31EB3866700BC47AE /* ViewController.swift */,
 				3BC85FC51EB3866700BC47AE /* Assets.xcassets */,
-				3BC85FC71EB3866700BC47AE /* Main.storyboard */,
 				3BC85FCA1EB3866700BC47AE /* Info.plist */,
+				3BC85FEC1EB386B000BC47AE /* MainMenu.xib */,
+				3BC85FC11EB3866700BC47AE /* AppDelegate.swift */,
+				3B0E4DED1EB38A7800534117 /* StatusBarMenuController.swift */,
 			);
 			path = Keenow;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC85FC61EB3866700BC47AE /* Assets.xcassets in Resources */,
-				3BC85FC91EB3866700BC47AE /* Main.storyboard in Resources */,
+				3BC85FED1EB386B000BC47AE /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC85FC41EB3866700BC47AE /* ViewController.swift in Sources */,
+				3B0E4DEE1EB38A7800534117 /* StatusBarMenuController.swift in Sources */,
 				3BC85FC21EB3866700BC47AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,17 +293,6 @@
 			targetProxy = 3BC85FDB1EB3866700BC47AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3BC85FC71EB3866700BC47AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3BC85FC81EB3866700BC47AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3BC85FE11EB3866700BC47AE /* Debug */ = {
@@ -507,6 +496,7 @@
 				3BC85FE51EB3866700BC47AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BC85FE61EB3866700BC47AE /* Build configuration list for PBXNativeTarget "KeenowTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +505,7 @@
 				3BC85FE81EB3866700BC47AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BC85FE91EB3866700BC47AE /* Build configuration list for PBXNativeTarget "KeenowUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +514,7 @@
 				3BC85FEB1EB3866700BC47AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

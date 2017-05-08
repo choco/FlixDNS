@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="9dJ-Gj-uGK" customClass="AppDelegate" customModule="Keenow" customModuleProvider="target"/>
+        <customObject id="OCm-bw-zhx" customClass="StatusBarMenuController" customModule="Keenow" customModuleProvider="target">
+            <connections>
+                <outlet property="statusbarMenu" destination="5A7-5m-yXg" id="NjQ-Fg-8OB"/>
+            </connections>
+        </customObject>
+        <menu id="5A7-5m-yXg" userLabel="Status Bar Menu">
+            <items>
+                <menuItem title="Quit" id="vFX-hf-MEn">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="OCm-bw-zhx" id="cD6-0v-zp6"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+</document>
