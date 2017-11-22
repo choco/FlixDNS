@@ -1,0 +1,6 @@
+[submodule "Vendor/FlagKit"]
+	path = Vendor/FlagKit
+	url = git@github.com:choco/FlagKit.git
+[submodule "Vendor/MASPreferences"]
+	path = Vendor/MASPreferences
+	url = git@github.com:shpakovski/MASPreferences.git

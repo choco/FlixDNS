@@ -1,0 +1,1255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B235B511FC074B1000E625B /* UnblockUsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B501FC074B1000E625B /* UnblockUsAPI.swift */; };
+		3B235B611FC07577000E625B /* StatusBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B5E1FC07577000E625B /* StatusBarMenuController.swift */; };
+		3B235B621FC07577000E625B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B5F1FC07577000E625B /* AppDelegate.swift */; };
+		3B235B631FC07577000E625B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B601FC07577000E625B /* MainMenu.xib */; };
+		3B235B661FC07580000E625B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B641FC07580000E625B /* Assets.xcassets */; };
+		3B3BB8D91FC081A700AD822D /* FlagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3BB8D41FC0819900AD822D /* FlagKit.framework */; };
+		3B3BB8DA1FC081A700AD822D /* FlagKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3BB8D41FC0819900AD822D /* FlagKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B41D24C1FC1C14100A8C865 /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B41D24B1FC1C0FB00A8C865 /* MASPreferences.framework */; };
+		3B41D24D1FC1C14100A8C865 /* MASPreferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B41D24B1FC1C0FB00A8C865 /* MASPreferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B41D2511FC1C55C00A8C865 /* PrefGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41D2501FC1C55C00A8C865 /* PrefGeneralViewController.swift */; };
+		3B41D2531FC1C57500A8C865 /* PrefAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41D2521FC1C57500A8C865 /* PrefAboutViewController.swift */; };
+		3B41D2551FC1C79E00A8C865 /* PrefWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41D2541FC1C79E00A8C865 /* PrefWindowController.swift */; };
+		3B41D2571FC1C9BA00A8C865 /* PrefGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B41D2561FC1C9BA00A8C865 /* PrefGeneralView.xib */; };
+		3B41D2591FC1C9D700A8C865 /* PrefAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B41D2581FC1C9D700A8C865 /* PrefAboutView.xib */; };
+		3B6C45091FC359D6004409A1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C45081FC359D6004409A1 /* main.swift */; };
+		3B6C45151FC36945004409A1 /* me.choco.FlixDNS-Privileged-Helper in Embed Privileged Helper */ = {isa = PBXBuildFile; fileRef = 3B6C45061FC359D6004409A1 /* me.choco.FlixDNS-Privileged-Helper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3B6C45251FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B6C451A1FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B6C452B1FC37039004409A1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C452A1FC37039004409A1 /* main.swift */; };
+		3B6C452F1FC3767C004409A1 /* PrivilegedHelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C452E1FC3767C004409A1 /* PrivilegedHelperService.swift */; };
+		3B6C45311FC376C1004409A1 /* PrivilegedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C45301FC376C1004409A1 /* PrivilegedServiceProtocol.swift */; };
+		3B6C45321FC376C1004409A1 /* PrivilegedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C45301FC376C1004409A1 /* PrivilegedServiceProtocol.swift */; };
+		3B6C45351FC37FF9004409A1 /* PrivilegedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C45301FC376C1004409A1 /* PrivilegedServiceProtocol.swift */; };
+		3B80D6B81FC58B42005CB44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80D6B71FC58B42005CB44A /* AppDelegate.swift */; };
+		3B80D6BA1FC58B42005CB44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B80D6B91FC58B42005CB44A /* Assets.xcassets */; };
+		3B80D6C61FC58C5E005CB44A /* FlixDNS Login Helper.app in Embed Login Helper */ = {isa = PBXBuildFile; fileRef = 3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FD31EB3866700BC47AE /* KeenowTests.swift */; };
+		3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */; };
+		3BFE3CF31FC0841400646438 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE3CF21FC0841400646438 /* Profile.swift */; };
+		3BFE3CF51FC0841E00646438 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE3CF41FC0841E00646438 /* Region.swift */; };
+		3BFE3CF71FC0983B00646438 /* PrefManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE3CF61FC0983B00646438 /* PrefManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B3BB8D31FC0819900AD822D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A49DD811F2F63F90007E46E;
+			remoteInfo = FlagKit;
+		};
+		3B3BB8D51FC0819900AD822D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A59879D1F306C260097DB64;
+			remoteInfo = FlagKitTests;
+		};
+		3B3BB8D71FC0819900AD822D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AF78CE11F31CE0400BD3D10;
+			remoteInfo = "FlagKitDemo-iOS";
+		};
+		3B3BB8DB1FC081A700AD822D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A49DD801F2F63F90007E46E;
+			remoteInfo = FlagKit;
+		};
+		3B41D24A1FC1C0FB00A8C865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F16AF7F41BA279F10022155C;
+			remoteInfo = MASPreferences;
+		};
+		3B41D24E1FC1C14100A8C865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F16AF7F31BA279F10022155C;
+			remoteInfo = MASPreferences;
+		};
+		3B6C45111FC36160004409A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B6C45051FC359D6004409A1;
+			remoteInfo = "FlixDNS Privileged Helper";
+		};
+		3B6C45231FC36C43004409A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B6C45191FC36C43004409A1;
+			remoteInfo = "FlixDNS Privileged XPC Service";
+		};
+		3BC85FD01EB3866700BC47AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC85FBD1EB3866700BC47AE;
+			remoteInfo = Keenow;
+		};
+		3BC85FDB1EB3866700BC47AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC85FBD1EB3866700BC47AE;
+			remoteInfo = Keenow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B53B7BA1FC07FCD009FA90A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3B3BB8DA1FC081A700AD822D /* FlagKit.framework in Embed Frameworks */,
+				3B41D24D1FC1C14100A8C865 /* MASPreferences.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6C45041FC359D6004409A1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3B6C45141FC36929004409A1 /* Embed Privileged Helper */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				3B6C45151FC36945004409A1 /* me.choco.FlixDNS-Privileged-Helper in Embed Privileged Helper */,
+			);
+			name = "Embed Privileged Helper";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6C45291FC36C43004409A1 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				3B6C45251FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B80D6C51FC58C3A005CB44A /* Embed Login Helper */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				3B80D6C61FC58C5E005CB44A /* FlixDNS Login Helper.app in Embed Login Helper */,
+			);
+			name = "Embed Login Helper";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3B235B501FC074B1000E625B /* UnblockUsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnblockUsAPI.swift; path = FlixDNS/Services/UnblockUsAPI.swift; sourceTree = SOURCE_ROOT; };
+		3B235B5E1FC07577000E625B /* StatusBarMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarMenuController.swift; sourceTree = "<group>"; };
+		3B235B5F1FC07577000E625B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B235B601FC07577000E625B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		3B235B641FC07580000E625B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B235B651FC07580000E625B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlagKit.xcodeproj; path = Vendor/FlagKit/Sources/Swift/FlagKit.xcodeproj; sourceTree = "<group>"; };
+		3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASPreferences.xcodeproj; path = Vendor/MASPreferences/MASPreferences.xcodeproj; sourceTree = "<group>"; };
+		3B41D2501FC1C55C00A8C865 /* PrefGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefGeneralViewController.swift; sourceTree = "<group>"; };
+		3B41D2521FC1C57500A8C865 /* PrefAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefAboutViewController.swift; sourceTree = "<group>"; };
+		3B41D2541FC1C79E00A8C865 /* PrefWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefWindowController.swift; sourceTree = "<group>"; };
+		3B41D2561FC1C9BA00A8C865 /* PrefGeneralView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrefGeneralView.xib; sourceTree = "<group>"; };
+		3B41D2581FC1C9D700A8C865 /* PrefAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrefAboutView.xib; sourceTree = "<group>"; };
+		3B6C45061FC359D6004409A1 /* me.choco.FlixDNS-Privileged-Helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "me.choco.FlixDNS-Privileged-Helper"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6C45081FC359D6004409A1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3B6C450D1FC35A7C004409A1 /* FlixDNS-Privileged-Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlixDNS-Privileged-Helper-Info.plist"; sourceTree = "<group>"; };
+		3B6C450F1FC35CF3004409A1 /* FlixDNS-Privileged-Helper-Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FlixDNS-Privileged-Helper-Launchd.plist"; sourceTree = "<group>"; };
+		3B6C451A1FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = "me.choco.FlixDNS-Privileged-XPC-Service.xpc"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6C45221FC36C43004409A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B6C452A1FC37039004409A1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3B6C452E1FC3767C004409A1 /* PrivilegedHelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedHelperService.swift; sourceTree = "<group>"; };
+		3B6C45301FC376C1004409A1 /* PrivilegedServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedServiceProtocol.swift; sourceTree = "<group>"; };
+		3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlixDNS Login Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B80D6B71FC58B42005CB44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B80D6B91FC58B42005CB44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B80D6BE1FC58B42005CB44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B80D6BF1FC58B42005CB44A /* FlixDNS_Login_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlixDNS_Login_Helper.entitlements; sourceTree = "<group>"; };
+		3BC85FBE1EB3866700BC47AE /* FlixDNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlixDNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC85FCF1EB3866700BC47AE /* FlixDNSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixDNSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC85FD31EB3866700BC47AE /* KeenowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowTests.swift; sourceTree = "<group>"; };
+		3BC85FD51EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC85FDA1EB3866700BC47AE /* FlixDNSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixDNSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowUITests.swift; sourceTree = "<group>"; };
+		3BC85FE01EB3866700BC47AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BFE3CF21FC0841400646438 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		3BFE3CF41FC0841E00646438 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		3BFE3CF61FC0983B00646438 /* PrefManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B6C45031FC359D6004409A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6C45171FC36C43004409A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B80D6B21FC58B42005CB44A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FBB1EB3866700BC47AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3BB8D91FC081A700AD822D /* FlagKit.framework in Frameworks */,
+				3B41D24C1FC1C14100A8C865 /* MASPreferences.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FCC1EB3866700BC47AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FD71EB3866700BC47AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B235B4C1FC07451000E625B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3B235B641FC07580000E625B /* Assets.xcassets */,
+				3B235B651FC07580000E625B /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3B235B4D1FC07462000E625B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B235B5F1FC07577000E625B /* AppDelegate.swift */,
+				3B235B5E1FC07577000E625B /* StatusBarMenuController.swift */,
+				3B41D2501FC1C55C00A8C865 /* PrefGeneralViewController.swift */,
+				3B41D2521FC1C57500A8C865 /* PrefAboutViewController.swift */,
+				3B41D2541FC1C79E00A8C865 /* PrefWindowController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3B235B4E1FC0746F000E625B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B235B501FC074B1000E625B /* UnblockUsAPI.swift */,
+				3BFE3CF61FC0983B00646438 /* PrefManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3B235B4F1FC07482000E625B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B235B601FC07577000E625B /* MainMenu.xib */,
+				3B41D2561FC1C9BA00A8C865 /* PrefGeneralView.xib */,
+				3B41D2581FC1C9D700A8C865 /* PrefAboutView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3B3BB8CE1FC0819900AD822D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B3BB8D41FC0819900AD822D /* FlagKit.framework */,
+				3B3BB8D61FC0819900AD822D /* FlagKitTests.xctest */,
+				3B3BB8D81FC0819900AD822D /* FlagKitDemo-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B41D2471FC1C0FB00A8C865 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B41D24B1FC1C0FB00A8C865 /* MASPreferences.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B53B7A41FC07F60009FA90A /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3B53B7BB1FC080BD009FA90A /* Frameworks */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		3B53B7BB1FC080BD009FA90A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */,
+				3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B6C45071FC359D6004409A1 /* FlixDNS Privileged Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3B6C450E1FC35A99004409A1 /* Assets */,
+				3B6C45081FC359D6004409A1 /* main.swift */,
+				3B6C452E1FC3767C004409A1 /* PrivilegedHelperService.swift */,
+			);
+			path = "FlixDNS Privileged Helper";
+			sourceTree = "<group>";
+		};
+		3B6C450E1FC35A99004409A1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3B6C450F1FC35CF3004409A1 /* FlixDNS-Privileged-Helper-Launchd.plist */,
+				3B6C450D1FC35A7C004409A1 /* FlixDNS-Privileged-Helper-Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3B6C451B1FC36C43004409A1 /* FlixDNS Privileged XPC Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B6C452D1FC37566004409A1 /* Protocol */,
+				3B6C452C1FC37133004409A1 /* Assets */,
+				3B6C452A1FC37039004409A1 /* main.swift */,
+			);
+			path = "FlixDNS Privileged XPC Service";
+			sourceTree = "<group>";
+		};
+		3B6C452C1FC37133004409A1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3B6C45221FC36C43004409A1 /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3B6C452D1FC37566004409A1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3B6C45301FC376C1004409A1 /* PrivilegedServiceProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		3B80D6B61FC58B42005CB44A /* FlixDNS Login Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3B80D6B71FC58B42005CB44A /* AppDelegate.swift */,
+				3B80D6B91FC58B42005CB44A /* Assets.xcassets */,
+				3B80D6BE1FC58B42005CB44A /* Info.plist */,
+				3B80D6BF1FC58B42005CB44A /* FlixDNS_Login_Helper.entitlements */,
+			);
+			path = "FlixDNS Login Helper";
+			sourceTree = "<group>";
+		};
+		3BC85FB51EB3866700BC47AE = {
+			isa = PBXGroup;
+			children = (
+				3B53B7A41FC07F60009FA90A /* Vendor */,
+				3BC85FC01EB3866700BC47AE /* FlixDNS */,
+				3BC85FD21EB3866700BC47AE /* FlixDNSTests */,
+				3BC85FDD1EB3866700BC47AE /* FlixDNSUITests */,
+				3B6C451B1FC36C43004409A1 /* FlixDNS Privileged XPC Service */,
+				3B6C45071FC359D6004409A1 /* FlixDNS Privileged Helper */,
+				3B80D6B61FC58B42005CB44A /* FlixDNS Login Helper */,
+				3BC85FBF1EB3866700BC47AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BC85FBF1EB3866700BC47AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FBE1EB3866700BC47AE /* FlixDNS.app */,
+				3BC85FCF1EB3866700BC47AE /* FlixDNSTests.xctest */,
+				3BC85FDA1EB3866700BC47AE /* FlixDNSUITests.xctest */,
+				3B6C45061FC359D6004409A1 /* me.choco.FlixDNS-Privileged-Helper */,
+				3B6C451A1FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc */,
+				3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BC85FC01EB3866700BC47AE /* FlixDNS */ = {
+			isa = PBXGroup;
+			children = (
+				3BFE3CEF1FC083AF00646438 /* Models */,
+				3B235B4E1FC0746F000E625B /* Services */,
+				3B235B4D1FC07462000E625B /* Controllers */,
+				3B235B4F1FC07482000E625B /* Views */,
+				3B235B4C1FC07451000E625B /* Assets */,
+			);
+			path = FlixDNS;
+			sourceTree = "<group>";
+		};
+		3BC85FD21EB3866700BC47AE /* FlixDNSTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FD31EB3866700BC47AE /* KeenowTests.swift */,
+				3BC85FD51EB3866700BC47AE /* Info.plist */,
+			);
+			path = FlixDNSTests;
+			sourceTree = "<group>";
+		};
+		3BC85FDD1EB3866700BC47AE /* FlixDNSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */,
+				3BC85FE01EB3866700BC47AE /* Info.plist */,
+			);
+			path = FlixDNSUITests;
+			sourceTree = "<group>";
+		};
+		3BFE3CEF1FC083AF00646438 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BFE3CF21FC0841400646438 /* Profile.swift */,
+				3BFE3CF41FC0841E00646438 /* Region.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B6C45051FC359D6004409A1 /* FlixDNS Privileged Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B6C450A1FC359D6004409A1 /* Build configuration list for PBXNativeTarget "FlixDNS Privileged Helper" */;
+			buildPhases = (
+				3B6C45021FC359D6004409A1 /* Sources */,
+				3B6C45031FC359D6004409A1 /* Frameworks */,
+				3B6C45041FC359D6004409A1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlixDNS Privileged Helper";
+			productName = "FlixDNS Privileged Helper";
+			productReference = 3B6C45061FC359D6004409A1 /* me.choco.FlixDNS-Privileged-Helper */;
+			productType = "com.apple.product-type.tool";
+		};
+		3B6C45191FC36C43004409A1 /* FlixDNS Privileged XPC Service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B6C45261FC36C43004409A1 /* Build configuration list for PBXNativeTarget "FlixDNS Privileged XPC Service" */;
+			buildPhases = (
+				3B6C45161FC36C43004409A1 /* Sources */,
+				3B6C45171FC36C43004409A1 /* Frameworks */,
+				3B6C45181FC36C43004409A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlixDNS Privileged XPC Service";
+			productName = "FlixDNS Privileged XPC Service";
+			productReference = 3B6C451A1FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
+		3B80D6B41FC58B42005CB44A /* FlixDNS Login Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B80D6C41FC58B42005CB44A /* Build configuration list for PBXNativeTarget "FlixDNS Login Helper" */;
+			buildPhases = (
+				3B80D6B11FC58B42005CB44A /* Sources */,
+				3B80D6B21FC58B42005CB44A /* Frameworks */,
+				3B80D6B31FC58B42005CB44A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlixDNS Login Helper";
+			productName = "FlixDNS Login Helper";
+			productReference = 3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BC85FBD1EB3866700BC47AE /* FlixDNS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC85FE31EB3866700BC47AE /* Build configuration list for PBXNativeTarget "FlixDNS" */;
+			buildPhases = (
+				3BC85FBA1EB3866700BC47AE /* Sources */,
+				3BC85FBB1EB3866700BC47AE /* Frameworks */,
+				3BC85FBC1EB3866700BC47AE /* Resources */,
+				3B53B7BA1FC07FCD009FA90A /* Embed Frameworks */,
+				3B6C45141FC36929004409A1 /* Embed Privileged Helper */,
+				3B6C45291FC36C43004409A1 /* Embed XPC Services */,
+				3B80D6C51FC58C3A005CB44A /* Embed Login Helper */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B6C45121FC36160004409A1 /* PBXTargetDependency */,
+				3B3BB8DC1FC081A700AD822D /* PBXTargetDependency */,
+				3B41D24F1FC1C14100A8C865 /* PBXTargetDependency */,
+				3B6C45241FC36C43004409A1 /* PBXTargetDependency */,
+			);
+			name = FlixDNS;
+			productName = Keenow;
+			productReference = 3BC85FBE1EB3866700BC47AE /* FlixDNS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BC85FCE1EB3866700BC47AE /* FlixDNSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC85FE61EB3866700BC47AE /* Build configuration list for PBXNativeTarget "FlixDNSTests" */;
+			buildPhases = (
+				3BC85FCB1EB3866700BC47AE /* Sources */,
+				3BC85FCC1EB3866700BC47AE /* Frameworks */,
+				3BC85FCD1EB3866700BC47AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BC85FD11EB3866700BC47AE /* PBXTargetDependency */,
+			);
+			name = FlixDNSTests;
+			productName = KeenowTests;
+			productReference = 3BC85FCF1EB3866700BC47AE /* FlixDNSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BC85FD91EB3866700BC47AE /* FlixDNSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC85FE91EB3866700BC47AE /* Build configuration list for PBXNativeTarget "FlixDNSUITests" */;
+			buildPhases = (
+				3BC85FD61EB3866700BC47AE /* Sources */,
+				3BC85FD71EB3866700BC47AE /* Frameworks */,
+				3BC85FD81EB3866700BC47AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BC85FDC1EB3866700BC47AE /* PBXTargetDependency */,
+			);
+			name = FlixDNSUITests;
+			productName = KeenowUITests;
+			productReference = 3BC85FDA1EB3866700BC47AE /* FlixDNSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BC85FB61EB3866700BC47AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Enrico Ghirardi";
+				TargetAttributes = {
+					3B6C45051FC359D6004409A1 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = VJ8592T25A;
+						ProvisioningStyle = Manual;
+					};
+					3B6C45191FC36C43004409A1 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = VJ8592T25A;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Manual;
+					};
+					3B80D6B41FC58B42005CB44A = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = VJ8592T25A;
+						ProvisioningStyle = Manual;
+					};
+					3BC85FBD1EB3866700BC47AE = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VJ8592T25A;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Manual;
+					};
+					3BC85FCE1EB3866700BC47AE = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VJ8592T25A;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3BC85FBD1EB3866700BC47AE;
+					};
+					3BC85FD91EB3866700BC47AE = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VJ8592T25A;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3BC85FBD1EB3866700BC47AE;
+					};
+				};
+			};
+			buildConfigurationList = 3BC85FB91EB3866700BC47AE /* Build configuration list for PBXProject "FlixDNS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BC85FB51EB3866700BC47AE;
+			productRefGroup = 3BC85FBF1EB3866700BC47AE /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3B3BB8CE1FC0819900AD822D /* Products */;
+					ProjectRef = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 3B41D2471FC1C0FB00A8C865 /* Products */;
+					ProjectRef = 3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3BC85FBD1EB3866700BC47AE /* FlixDNS */,
+				3BC85FCE1EB3866700BC47AE /* FlixDNSTests */,
+				3BC85FD91EB3866700BC47AE /* FlixDNSUITests */,
+				3B80D6B41FC58B42005CB44A /* FlixDNS Login Helper */,
+				3B6C45191FC36C43004409A1 /* FlixDNS Privileged XPC Service */,
+				3B6C45051FC359D6004409A1 /* FlixDNS Privileged Helper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3B3BB8D41FC0819900AD822D /* FlagKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FlagKit.framework;
+			remoteRef = 3B3BB8D31FC0819900AD822D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B3BB8D61FC0819900AD822D /* FlagKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FlagKitTests.xctest;
+			remoteRef = 3B3BB8D51FC0819900AD822D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B3BB8D81FC0819900AD822D /* FlagKitDemo-iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "FlagKitDemo-iOS.app";
+			remoteRef = 3B3BB8D71FC0819900AD822D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B41D24B1FC1C0FB00A8C865 /* MASPreferences.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MASPreferences.framework;
+			remoteRef = 3B41D24A1FC1C0FB00A8C865 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B6C45181FC36C43004409A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B80D6B31FC58B42005CB44A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B80D6BA1FC58B42005CB44A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FBC1EB3866700BC47AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B235B661FC07580000E625B /* Assets.xcassets in Resources */,
+				3B41D2591FC1C9D700A8C865 /* PrefAboutView.xib in Resources */,
+				3B235B631FC07577000E625B /* MainMenu.xib in Resources */,
+				3B41D2571FC1C9BA00A8C865 /* PrefGeneralView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FCD1EB3866700BC47AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FD81EB3866700BC47AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B6C45021FC359D6004409A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6C45321FC376C1004409A1 /* PrivilegedServiceProtocol.swift in Sources */,
+				3B6C452F1FC3767C004409A1 /* PrivilegedHelperService.swift in Sources */,
+				3B6C45091FC359D6004409A1 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6C45161FC36C43004409A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6C45311FC376C1004409A1 /* PrivilegedServiceProtocol.swift in Sources */,
+				3B6C452B1FC37039004409A1 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B80D6B11FC58B42005CB44A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B80D6B81FC58B42005CB44A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FBA1EB3866700BC47AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6C45351FC37FF9004409A1 /* PrivilegedServiceProtocol.swift in Sources */,
+				3B235B621FC07577000E625B /* AppDelegate.swift in Sources */,
+				3B41D2531FC1C57500A8C865 /* PrefAboutViewController.swift in Sources */,
+				3BFE3CF31FC0841400646438 /* Profile.swift in Sources */,
+				3B235B511FC074B1000E625B /* UnblockUsAPI.swift in Sources */,
+				3B41D2511FC1C55C00A8C865 /* PrefGeneralViewController.swift in Sources */,
+				3BFE3CF71FC0983B00646438 /* PrefManager.swift in Sources */,
+				3BFE3CF51FC0841E00646438 /* Region.swift in Sources */,
+				3B41D2551FC1C79E00A8C865 /* PrefWindowController.swift in Sources */,
+				3B235B611FC07577000E625B /* StatusBarMenuController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FCB1EB3866700BC47AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC85FD61EB3866700BC47AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B3BB8DC1FC081A700AD822D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlagKit;
+			targetProxy = 3B3BB8DB1FC081A700AD822D /* PBXContainerItemProxy */;
+		};
+		3B41D24F1FC1C14100A8C865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASPreferences;
+			targetProxy = 3B41D24E1FC1C14100A8C865 /* PBXContainerItemProxy */;
+		};
+		3B6C45121FC36160004409A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B6C45051FC359D6004409A1 /* FlixDNS Privileged Helper */;
+			targetProxy = 3B6C45111FC36160004409A1 /* PBXContainerItemProxy */;
+		};
+		3B6C45241FC36C43004409A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B6C45191FC36C43004409A1 /* FlixDNS Privileged XPC Service */;
+			targetProxy = 3B6C45231FC36C43004409A1 /* PBXContainerItemProxy */;
+		};
+		3BC85FD11EB3866700BC47AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC85FBD1EB3866700BC47AE /* FlixDNS */;
+			targetProxy = 3BC85FD01EB3866700BC47AE /* PBXContainerItemProxy */;
+		};
+		3BC85FDC1EB3866700BC47AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC85FBD1EB3866700BC47AE /* FlixDNS */;
+			targetProxy = 3BC85FDB1EB3866700BC47AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3B6C450B1FC359D6004409A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/FlixDNS Privileged Helper/Assets/FlixDNS-Privileged-Helper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/FlixDNS Privileged Helper/Assets/FlixDNS-Privileged-Helper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/FlixDNS Privileged Helper/Assets/FlixDNS-Privileged-Helper-Launchd.plist\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.choco.FlixDNS-Privileged-Helper";
+				PRODUCT_NAME = "me.choco.FlixDNS-Privileged-Helper";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		3B6C450C1FC359D6004409A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/FlixDNS Privileged Helper/Assets/FlixDNS-Privileged-Helper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/FlixDNS Privileged Helper/Assets/FlixDNS-Privileged-Helper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/FlixDNS Privileged Helper/Assets/FlixDNS-Privileged-Helper-Launchd.plist\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.choco.FlixDNS-Privileged-Helper";
+				PRODUCT_NAME = "me.choco.FlixDNS-Privileged-Helper";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		3B6C45271FC36C43004409A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/FlixDNS Privileged XPC Service/Assets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.choco.FlixDNS-Privileged-XPC-Service";
+				PRODUCT_NAME = "me.choco.FlixDNS-Privileged-XPC-Service";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3B6C45281FC36C43004409A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/FlixDNS Privileged XPC Service/Assets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.choco.FlixDNS-Privileged-XPC-Service";
+				PRODUCT_NAME = "me.choco.FlixDNS-Privileged-XPC-Service";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3B80D6C01FC58B42005CB44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "FlixDNS Login Helper/FlixDNS_Login_Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "FlixDNS Login Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.choco.FlixDNS-Login-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		3B80D6C11FC58B42005CB44A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "FlixDNS Login Helper/FlixDNS_Login_Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "FlixDNS Login Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.choco.FlixDNS-Login-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		3BC85FE11EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+			};
+			name = Debug;
+		};
+		3BC85FE21EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+			};
+			name = Release;
+		};
+		3BC85FE41EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = FlixDNS/Assets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.FlixDNS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		3BC85FE51EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = FlixDNS/Assets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.FlixDNS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		3BC85FE71EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlixDNS.app/Contents/MacOS/FlixDNS";
+			};
+			name = Debug;
+		};
+		3BC85FE81EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlixDNS.app/Contents/MacOS/FlixDNS";
+			};
+			name = Release;
+		};
+		3BC85FEA1EB3866700BC47AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = Keenow;
+			};
+			name = Debug;
+		};
+		3BC85FEB1EB3866700BC47AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VJ8592T25A;
+				INFOPLIST_FILE = KeenowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.choco.KeenowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = Keenow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B6C450A1FC359D6004409A1 /* Build configuration list for PBXNativeTarget "FlixDNS Privileged Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6C450B1FC359D6004409A1 /* Debug */,
+				3B6C450C1FC359D6004409A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B6C45261FC36C43004409A1 /* Build configuration list for PBXNativeTarget "FlixDNS Privileged XPC Service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6C45271FC36C43004409A1 /* Debug */,
+				3B6C45281FC36C43004409A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B80D6C41FC58B42005CB44A /* Build configuration list for PBXNativeTarget "FlixDNS Login Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B80D6C01FC58B42005CB44A /* Debug */,
+				3B80D6C11FC58B42005CB44A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC85FB91EB3866700BC47AE /* Build configuration list for PBXProject "FlixDNS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FE11EB3866700BC47AE /* Debug */,
+				3BC85FE21EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC85FE31EB3866700BC47AE /* Build configuration list for PBXNativeTarget "FlixDNS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FE41EB3866700BC47AE /* Debug */,
+				3BC85FE51EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC85FE61EB3866700BC47AE /* Build configuration list for PBXNativeTarget "FlixDNSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FE71EB3866700BC47AE /* Debug */,
+				3BC85FE81EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC85FE91EB3866700BC47AE /* Build configuration list for PBXNativeTarget "FlixDNSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC85FEA1EB3866700BC47AE /* Debug */,
+				3BC85FEB1EB3866700BC47AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BC85FB61EB3866700BC47AE /* Project object */;
+}

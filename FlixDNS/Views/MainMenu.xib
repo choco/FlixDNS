@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="9dJ-Gj-uGK" id="Xto-vr-5qJ"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="9dJ-Gj-uGK" customClass="AppDelegate" customModule="FlixDNS" customModuleProvider="target"/>
+        <customObject id="OCm-bw-zhx" customClass="StatusBarMenuController" customModule="FlixDNS" customModuleProvider="target">
+            <connections>
+                <outlet property="dnsItem" destination="LcK-SN-K4z" id="df1-aX-LzP"/>
+                <outlet property="ipItem" destination="DNa-Mf-mbo" id="ShS-nn-k0g"/>
+                <outlet property="regionItem" destination="IV3-f7-Miw" id="5OU-sF-uN4"/>
+                <outlet property="regionsMenu" destination="KA4-nf-64N" id="I3s-6v-V3N"/>
+                <outlet property="statusbarMenu" destination="5A7-5m-yXg" id="NjQ-Fg-8OB"/>
+            </connections>
+        </customObject>
+        <menu autoenablesItems="NO" id="5A7-5m-yXg" userLabel="Status Bar Menu">
+            <items>
+                <menuItem title="  IP: Checking..." image="NSStatusPartiallyAvailable" id="DNa-Mf-mbo">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateIP:" target="OCm-bw-zhx" id="L0M-bt-ciK"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="  Unblock-Us DNS" image="NSStatusPartiallyAvailable" id="LcK-SN-K4z">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateDNS:" target="OCm-bw-zhx" id="Pjw-su-uhr"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="  Region" image="NSStatusPartiallyAvailable" id="IV3-f7-Miw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="  Region" autoenablesItems="NO" id="KA4-nf-64N">
+                        <items>
+                            <menuItem isSeparatorItem="YES" id="Jyh-6f-Ijt"/>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="4if-gx-YLO"/>
+                <menuItem title="Preferences..." id="gJp-My-pfJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="OCm-bw-zhx" id="MLS-AP-6LS"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit FlixDNS" keyEquivalent="q" id="vFX-hf-MEn">
+                    <connections>
+                        <action selector="quitClicked:" target="OCm-bw-zhx" id="cD6-0v-zp6"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="139" y="165.5"/>
+        </menu>
+        <customView id="0AB-Yg-o7M">
+            <rect key="frame" x="0.0" y="0.0" width="193" height="21"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWM-Eq-z77" userLabel="Item Status">
+                    <rect key="frame" x="0.0" y="-1" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSMenuOnStateTemplate" id="gqI-jX-b47"/>
+                </imageView>
+                <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Aob-1G-D61" userLabel="Item Progress">
+                    <rect key="frame" x="21" y="1" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </progressIndicator>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nE0-Ld-5Ub" userLabel="Item Image">
+                    <rect key="frame" x="21" y="0.0" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" image="flag" id="Wp7-K2-3xp"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5u-8R-Wx0">
+                    <rect key="frame" x="47" y="3" width="130" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="5nV-yq-3Mh">
+                        <font key="font" metaFont="system" size="14"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJu-8F-TdX" userLabel="Item Image">
+                    <rect key="frame" x="172" y="-1" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" id="aZE-Vj-gyv"/>
+                </imageView>
+            </subviews>
+            <point key="canvasLocation" x="-4.5" y="38.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSMenuOnStateTemplate" width="12" height="12"/>
+        <image name="NSStatusPartiallyAvailable" width="16" height="16"/>
+        <image name="flag" width="42" height="30"/>
+    </resources>
+</document>
