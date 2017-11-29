@@ -16,6 +16,7 @@ class UnblockUsAPI {
     private let COUNTRY_ENDPOINT = "set-country.js"
     
     static let REDIRECTED_DOMAINS = [
+        "hulu.com",
         "hbo.com",
         "hbogo.com",
         "netflix.com",
