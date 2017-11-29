@@ -193,6 +193,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate {
                     DispatchQueue.main.async {
                         for item in self.regionsMenu.items {
                             item.isEnabled = true
+                            item.state = .off
                         }
                         self.regionsMenu.item(withTag: self.selectedRegionIndex)?.state = .on
                     }
