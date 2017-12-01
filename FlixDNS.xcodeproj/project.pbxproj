@@ -12,6 +12,15 @@
 		3B235B621FC07577000E625B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B5F1FC07577000E625B /* AppDelegate.swift */; };
 		3B235B631FC07577000E625B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B601FC07577000E625B /* MainMenu.xib */; };
 		3B235B661FC07580000E625B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B641FC07580000E625B /* Assets.xcassets */; };
+		3B299DFD1FCFFF1D00B61D82 /* org.sparkle-project.Downloader.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B299DEC1FCFF9F800B61D82 /* org.sparkle-project.Downloader.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B299E001FCFFF1D00B61D82 /* org.sparkle-project.InstallerConnection.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B299DE81FCFF9F800B61D82 /* org.sparkle-project.InstallerConnection.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B299E031FCFFF1D00B61D82 /* org.sparkle-project.InstallerLauncher.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B299DE61FCFF9F800B61D82 /* org.sparkle-project.InstallerLauncher.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B299E061FCFFF1D00B61D82 /* org.sparkle-project.InstallerStatus.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B299DEA1FCFF9F800B61D82 /* org.sparkle-project.InstallerStatus.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B299E091FD0021700B61D82 /* SparkleCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B299DE21FCFF9F800B61D82 /* SparkleCore.framework */; };
+		3B299E0A1FD0021700B61D82 /* SparkleCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B299DE21FCFF9F800B61D82 /* SparkleCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B299E0E1FD00E0F00B61D82 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B299E0D1FD00E0F00B61D82 /* UpdateManager.swift */; };
+		3B299E101FD00F9D00B61D82 /* FDNSUpdaterUserDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B299E0F1FD00F9D00B61D82 /* FDNSUpdaterUserDriver.swift */; };
+		3B299E121FD022F600B61D82 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3B299E111FD022F600B61D82 /* dsa_pub.pem */; };
 		3B3BB8D91FC081A700AD822D /* FlagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3BB8D41FC0819900AD822D /* FlagKit.framework */; };
 		3B3BB8DA1FC081A700AD822D /* FlagKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3BB8D41FC0819900AD822D /* FlagKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B41D24C1FC1C14100A8C865 /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B41D24B1FC1C0FB00A8C865 /* MASPreferences.framework */; };
@@ -40,6 +49,146 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3B299DDF1FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		3B299DE11FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 72A5D59C1D6927730009E5AC;
+			remoteInfo = SparkleCore;
+		};
+		3B299DE31FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 72B398D21D3D879300EE297F;
+			remoteInfo = Autoupdate;
+		};
+		3B299DE51FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 726E07AD1CAF08D6001A286B;
+			remoteInfo = SparkleInstallerLauncher;
+		};
+		3B299DE71FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 724BB36C1D31D0B7005D534A;
+			remoteInfo = SparkleInstallerConnection;
+		};
+		3B299DE91FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 724BB3931D333832005D534A;
+			remoteInfo = SparkleInstallerStatus;
+		};
+		3B299DEB1FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 726E07EF1CAF37BD001A286B;
+			remoteInfo = SparkleDownloader;
+		};
+		3B299DED1FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		3B299DEF1FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 726E4A161C86C88F00C57C6A;
+			remoteInfo = TestAppHelper;
+		};
+		3B299DF11FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		3B299DF31FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		3B299DF51FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 72D9549E1CBB415B006F28BD;
+			remoteInfo = "sparkle-cli";
+		};
+		3B299DF71FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 721C24451CB753E6005440CB;
+			remoteInfo = "Installer Progress";
+		};
+		3B299DF91FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 726B2B5D1C645FC900388755;
+			remoteInfo = "UI Tests";
+		};
+		3B299DFB1FCFF9F800B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7205C43E1E13049400E370AE;
+			remoteInfo = generate_appcast;
+		};
+		3B299DFE1FCFFF1D00B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 726E07EE1CAF37BD001A286B;
+			remoteInfo = SparkleDownloader;
+		};
+		3B299E011FCFFF1D00B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 724BB36B1D31D0B7005D534A;
+			remoteInfo = SparkleInstallerConnection;
+		};
+		3B299E041FCFFF1D00B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 726E07AC1CAF08D6001A286B;
+			remoteInfo = SparkleInstallerLauncher;
+		};
+		3B299E071FCFFF1D00B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 724BB3921D333832005D534A;
+			remoteInfo = SparkleInstallerStatus;
+		};
+		3B299E0B1FD0021700B61D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 72A5D59B1D6927730009E5AC;
+			remoteInfo = SparkleCore;
+		};
 		3B3BB8D31FC0819900AD822D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
@@ -119,6 +268,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3B299E0A1FD0021700B61D82 /* SparkleCore.framework in Embed Frameworks */,
 				3B3BB8DA1FC081A700AD822D /* FlagKit.framework in Embed Frameworks */,
 				3B41D24D1FC1C14100A8C865 /* MASPreferences.framework in Embed Frameworks */,
 			);
@@ -147,10 +297,14 @@
 		};
 		3B6C45291FC36C43004409A1 /* Embed XPC Services */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
 			dstSubfolderSpec = 16;
 			files = (
+				3B299E001FCFFF1D00B61D82 /* org.sparkle-project.InstallerConnection.xpc in Embed XPC Services */,
+				3B299E031FCFFF1D00B61D82 /* org.sparkle-project.InstallerLauncher.xpc in Embed XPC Services */,
+				3B299E061FCFFF1D00B61D82 /* org.sparkle-project.InstallerStatus.xpc in Embed XPC Services */,
+				3B299DFD1FCFFF1D00B61D82 /* org.sparkle-project.Downloader.xpc in Embed XPC Services */,
 				3B6C45251FC36C43004409A1 /* me.choco.FlixDNS-Privileged-XPC-Service.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
@@ -176,6 +330,10 @@
 		3B235B601FC07577000E625B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		3B235B641FC07580000E625B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B235B651FC07580000E625B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
+		3B299E0D1FD00E0F00B61D82 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		3B299E0F1FD00F9D00B61D82 /* FDNSUpdaterUserDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDNSUpdaterUserDriver.swift; sourceTree = "<group>"; };
+		3B299E111FD022F600B61D82 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlagKit.xcodeproj; path = Vendor/FlagKit/Sources/Swift/FlagKit.xcodeproj; sourceTree = "<group>"; };
 		3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASPreferences.xcodeproj; path = Vendor/MASPreferences/MASPreferences.xcodeproj; sourceTree = "<group>"; };
 		3B41D2501FC1C55C00A8C865 /* PrefGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefGeneralViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +355,8 @@
 		3B80D6B91FC58B42005CB44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B80D6BE1FC58B42005CB44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B80D6BF1FC58B42005CB44A /* FlixDNS_Login_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlixDNS_Login_Helper.entitlements; sourceTree = "<group>"; };
+		3BB050A71FD208470095F42A /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
+		3BB050A81FD208470095F42A /* sign_Sparkle_XPC_services.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = sign_Sparkle_XPC_services.sh; sourceTree = "<group>"; };
 		3BC85FBE1EB3866700BC47AE /* FlixDNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlixDNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FCF1EB3866700BC47AE /* FlixDNSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixDNSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FD31EB3866700BC47AE /* KeenowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowTests.swift; sourceTree = "<group>"; };
@@ -235,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B299E091FD0021700B61D82 /* SparkleCore.framework in Frameworks */,
 				3B3BB8D91FC081A700AD822D /* FlagKit.framework in Frameworks */,
 				3B41D24C1FC1C14100A8C865 /* MASPreferences.framework in Frameworks */,
 			);
@@ -260,6 +421,7 @@
 		3B235B4C1FC07451000E625B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3B299E111FD022F600B61D82 /* dsa_pub.pem */,
 				3B235B641FC07580000E625B /* Assets.xcassets */,
 				3B235B651FC07580000E625B /* Info.plist */,
 			);
@@ -281,8 +443,10 @@
 		3B235B4E1FC0746F000E625B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3B299E0D1FD00E0F00B61D82 /* UpdateManager.swift */,
 				3B235B501FC074B1000E625B /* UnblockUsAPI.swift */,
 				3BFE3CF61FC0983B00646438 /* PrefManager.swift */,
+				3B299E0F1FD00F9D00B61D82 /* FDNSUpdaterUserDriver.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -295,6 +459,28 @@
 				3B41D2581FC1C9D700A8C865 /* PrefAboutView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3B299DC91FCFF9F700B61D82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B299DE01FCFF9F800B61D82 /* Sparkle.framework */,
+				3B299DE21FCFF9F800B61D82 /* SparkleCore.framework */,
+				3B299DE41FCFF9F800B61D82 /* Autoupdate */,
+				3B299DE61FCFF9F800B61D82 /* org.sparkle-project.InstallerLauncher.xpc */,
+				3B299DE81FCFF9F800B61D82 /* org.sparkle-project.InstallerConnection.xpc */,
+				3B299DEA1FCFF9F800B61D82 /* org.sparkle-project.InstallerStatus.xpc */,
+				3B299DEC1FCFF9F800B61D82 /* org.sparkle-project.Downloader.xpc */,
+				3B299DEE1FCFF9F800B61D82 /* Sparkle Test App.app */,
+				3B299DF01FCFF9F800B61D82 /* TestAppHelper.xpc */,
+				3B299DF21FCFF9F800B61D82 /* Sparkle Unit Tests.xctest */,
+				3B299DF41FCFF9F800B61D82 /* BinaryDelta */,
+				3B299DF61FCFF9F800B61D82 /* sparkle.app */,
+				3B299DF81FCFF9F800B61D82 /* Updater.app */,
+				3B299DFA1FCFF9F800B61D82 /* UI Tests.xctest */,
+				3B299DFC1FCFF9F800B61D82 /* generate_appcast */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3B3BB8CE1FC0819900AD822D /* Products */ = {
@@ -326,6 +512,7 @@
 		3B53B7BB1FC080BD009FA90A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */,
 				3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */,
 				3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */,
 			);
@@ -388,6 +575,15 @@
 			path = "FlixDNS Login Helper";
 			sourceTree = "<group>";
 		};
+		3BB050A61FD208470095F42A /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3BB050A71FD208470095F42A /* set_build_number.sh */,
+				3BB050A81FD208470095F42A /* sign_Sparkle_XPC_services.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		3BC85FB51EB3866700BC47AE = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +594,7 @@
 				3B6C451B1FC36C43004409A1 /* FlixDNS Privileged XPC Service */,
 				3B6C45071FC359D6004409A1 /* FlixDNS Privileged Helper */,
 				3B80D6B61FC58B42005CB44A /* FlixDNS Login Helper */,
+				3BB050A61FD208470095F42A /* Scripts */,
 				3BC85FBF1EB3866700BC47AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -519,6 +716,8 @@
 				3B6C45141FC36929004409A1 /* Embed Privileged Helper */,
 				3B6C45291FC36C43004409A1 /* Embed XPC Services */,
 				3B80D6C51FC58C3A005CB44A /* Embed Login Helper */,
+				3BB584321FD026EB000E1FD4 /* ShellScript */,
+				3BB050A51FD1FF1A0095F42A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -527,6 +726,11 @@
 				3B3BB8DC1FC081A700AD822D /* PBXTargetDependency */,
 				3B41D24F1FC1C14100A8C865 /* PBXTargetDependency */,
 				3B6C45241FC36C43004409A1 /* PBXTargetDependency */,
+				3B299DFF1FCFFF1D00B61D82 /* PBXTargetDependency */,
+				3B299E021FCFFF1D00B61D82 /* PBXTargetDependency */,
+				3B299E051FCFFF1D00B61D82 /* PBXTargetDependency */,
+				3B299E081FCFFF1D00B61D82 /* PBXTargetDependency */,
+				3B299E0C1FD0021700B61D82 /* PBXTargetDependency */,
 			);
 			name = FlixDNS;
 			productName = Keenow;
@@ -575,6 +779,9 @@
 		3BC85FB61EB3866700BC47AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Enrico Ghirardi";
@@ -637,6 +844,10 @@
 					ProductGroup = 3B41D2471FC1C0FB00A8C865 /* Products */;
 					ProjectRef = 3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */;
 				},
+				{
+					ProductGroup = 3B299DC91FCFF9F700B61D82 /* Products */;
+					ProjectRef = 3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -651,6 +862,111 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		3B299DE01FCFF9F800B61D82 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 3B299DDF1FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DE21FCFF9F800B61D82 /* SparkleCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SparkleCore.framework;
+			remoteRef = 3B299DE11FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DE41FCFF9F800B61D82 /* Autoupdate */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Autoupdate;
+			remoteRef = 3B299DE31FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DE61FCFF9F800B61D82 /* org.sparkle-project.InstallerLauncher.xpc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.xpc-service";
+			path = "org.sparkle-project.InstallerLauncher.xpc";
+			remoteRef = 3B299DE51FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DE81FCFF9F800B61D82 /* org.sparkle-project.InstallerConnection.xpc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.xpc-service";
+			path = "org.sparkle-project.InstallerConnection.xpc";
+			remoteRef = 3B299DE71FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DEA1FCFF9F800B61D82 /* org.sparkle-project.InstallerStatus.xpc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.xpc-service";
+			path = "org.sparkle-project.InstallerStatus.xpc";
+			remoteRef = 3B299DE91FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DEC1FCFF9F800B61D82 /* org.sparkle-project.Downloader.xpc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.xpc-service";
+			path = "org.sparkle-project.Downloader.xpc";
+			remoteRef = 3B299DEB1FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DEE1FCFF9F800B61D82 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 3B299DED1FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DF01FCFF9F800B61D82 /* TestAppHelper.xpc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.xpc-service";
+			path = TestAppHelper.xpc;
+			remoteRef = 3B299DEF1FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DF21FCFF9F800B61D82 /* Sparkle Unit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.xctest";
+			remoteRef = 3B299DF11FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DF41FCFF9F800B61D82 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 3B299DF31FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DF61FCFF9F800B61D82 /* sparkle.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = sparkle.app;
+			remoteRef = 3B299DF51FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DF81FCFF9F800B61D82 /* Updater.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Updater.app;
+			remoteRef = 3B299DF71FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DFA1FCFF9F800B61D82 /* UI Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UI Tests.xctest";
+			remoteRef = 3B299DF91FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B299DFC1FCFF9F800B61D82 /* generate_appcast */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = generate_appcast;
+			remoteRef = 3B299DFB1FCFF9F800B61D82 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		3B3BB8D41FC0819900AD822D /* FlagKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -701,6 +1017,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B299E121FD022F600B61D82 /* dsa_pub.pem in Resources */,
 				3B235B661FC07580000E625B /* Assets.xcassets in Resources */,
 				3B41D2591FC1C9D700A8C865 /* PrefAboutView.xib in Resources */,
 				3B235B631FC07577000E625B /* MainMenu.xib in Resources */,
@@ -723,6 +1040,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BB050A51FD1FF1A0095F42A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $SRCROOT/Scripts/set_build_number.sh;
+		};
+		3BB584321FD026EB000E1FD4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $SRCROOT/Scripts/sign_Sparkle_XPC_services.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B6C45021FC359D6004409A1 /* Sources */ = {
@@ -760,6 +1106,8 @@
 				3B235B621FC07577000E625B /* AppDelegate.swift in Sources */,
 				3B41D2531FC1C57500A8C865 /* PrefAboutViewController.swift in Sources */,
 				3BFE3CF31FC0841400646438 /* Profile.swift in Sources */,
+				3B299E0E1FD00E0F00B61D82 /* UpdateManager.swift in Sources */,
+				3B299E101FD00F9D00B61D82 /* FDNSUpdaterUserDriver.swift in Sources */,
 				3B235B511FC074B1000E625B /* UnblockUsAPI.swift in Sources */,
 				3B41D2511FC1C55C00A8C865 /* PrefGeneralViewController.swift in Sources */,
 				3BFE3CF71FC0983B00646438 /* PrefManager.swift in Sources */,
@@ -788,6 +1136,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3B299DFF1FCFFF1D00B61D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SparkleDownloader;
+			targetProxy = 3B299DFE1FCFFF1D00B61D82 /* PBXContainerItemProxy */;
+		};
+		3B299E021FCFFF1D00B61D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SparkleInstallerConnection;
+			targetProxy = 3B299E011FCFFF1D00B61D82 /* PBXContainerItemProxy */;
+		};
+		3B299E051FCFFF1D00B61D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SparkleInstallerLauncher;
+			targetProxy = 3B299E041FCFFF1D00B61D82 /* PBXContainerItemProxy */;
+		};
+		3B299E081FCFFF1D00B61D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SparkleInstallerStatus;
+			targetProxy = 3B299E071FCFFF1D00B61D82 /* PBXContainerItemProxy */;
+		};
+		3B299E0C1FD0021700B61D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SparkleCore;
+			targetProxy = 3B299E0B1FD0021700B61D82 /* PBXContainerItemProxy */;
+		};
 		3B3BB8DC1FC081A700AD822D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlagKit;

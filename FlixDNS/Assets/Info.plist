@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>Set based on Git tag</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>Set based on number of Git commits</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
@@ -35,5 +35,9 @@
 		<key>me.choco.FlixDNS-Privileged-Helper</key>
 		<string>anchor apple generic and identifier "me.choco.FlixDNS-Privileged-Helper" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = VJ8592T25A)</string>
 	</dict>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/choco/FlixDNS/master/FlixDNSAppcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

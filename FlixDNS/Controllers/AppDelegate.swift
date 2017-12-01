@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let Prefs = PrefManager.shared
     var xpcPrivilegedHelperConnection: NSXPCConnection?
     var privilegedHelperInstalled: Bool = false
+    let updateManager = UpdateManager.shared
     
     lazy var preferenceWindowController: PrefWindowController = {
         return PrefWindowController(
@@ -29,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        updateManager.checkForUpdates()
         shouldInstallHelper {
             installed in
             if !installed {

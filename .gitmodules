@@ -4,3 +4,7 @@
 [submodule "Vendor/MASPreferences"]
 	path = Vendor/MASPreferences
 	url = git@github.com:shpakovski/MASPreferences.git
+[submodule "Vendor/Sparkle"]
+	path = Vendor/Sparkle
+	url = git@github.com:sparkle-project/Sparkle.git
+	branch = ui-separation-and-xpc

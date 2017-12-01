@@ -22,12 +22,15 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
     }
     
     @IBOutlet weak var versionLabel: NSTextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let versionObject = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
-        versionLabel.stringValue = versionObject as? String ?? ""
+        let buildNumberObject = Bundle.main.infoDictionary?["CFBundleVersion"]
+        let version = versionObject as? String ?? ""
+        let buildNumber = buildNumberObject as? String ?? ""
+        versionLabel.stringValue = "\(version) (\(buildNumber))"
     }
     
     @IBAction func checkUpdateClicked(_ sender: NSButton) {
