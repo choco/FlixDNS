@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>FlixDNS</title>
+        <item>
+            <title>1.0.2</title>
+            <pubDate>Mon, 04 Dec 2017 18:00:00 +0100</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/choco/FlixDNS/releases/download/v1.0.2/FlixDNS.app.zip"
+                sparkle:version="11" sparkle:shortVersionString="1.0.2"
+                length="10415110" type="application/octet-stream"
+                sparkle:dsaSignature="MEUCIFXlwLGXW7kGSGkYJBnMujnL6NBji7Ao4Pf3/A0aPJN9AiEAhbpAGTGkpoR/ouBWlR5jrwxMhFAKM1EJGtooC4x3/cE="/>
+        </item>
+</channel>
+</rss>
