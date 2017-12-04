@@ -42,6 +42,8 @@
 		3B80D6BA1FC58B42005CB44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B80D6B91FC58B42005CB44A /* Assets.xcassets */; };
 		3B80D6C61FC58C5E005CB44A /* FlixDNS Login Helper.app in Embed Login Helper */ = {isa = PBXBuildFile; fileRef = 3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BB050C61FD5B4F10095F42A /* credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB050C51FD5B4F00095F42A /* credits.rtf */; };
+		3BB050D01FD5BFB80095F42A /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB050CF1FD5BFA40095F42A /* LetsMove.framework */; };
+		3BB050D11FD5BFB80095F42A /* LetsMove.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB050CF1FD5BFA40095F42A /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FD31EB3866700BC47AE /* KeenowTests.swift */; };
 		3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */; };
 		3BFE3CF31FC0841400646438 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE3CF21FC0841400646438 /* Profile.swift */; };
@@ -246,6 +248,27 @@
 			remoteGlobalIDString = 3B6C45191FC36C43004409A1;
 			remoteInfo = "FlixDNS Privileged XPC Service";
 		};
+		3BB050CC1FD5BFA40095F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BB050C71FD5BFA40095F42A /* LetsMove.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
+			remoteInfo = "LetsMove Test";
+		};
+		3BB050CE1FD5BFA40095F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BB050C71FD5BFA40095F42A /* LetsMove.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F146F8271CE7094400233A9B;
+			remoteInfo = LetsMove;
+		};
+		3BB050D21FD5BFB80095F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BB050C71FD5BFA40095F42A /* LetsMove.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F146F8261CE7094400233A9B;
+			remoteInfo = LetsMove;
+		};
 		3BC85FD01EB3866700BC47AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3BC85FB61EB3866700BC47AE /* Project object */;
@@ -270,6 +293,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3B299E0A1FD0021700B61D82 /* SparkleCore.framework in Embed Frameworks */,
+				3BB050D11FD5BFB80095F42A /* LetsMove.framework in Embed Frameworks */,
 				3B3BB8DA1FC081A700AD822D /* FlagKit.framework in Embed Frameworks */,
 				3B41D24D1FC1C14100A8C865 /* MASPreferences.framework in Embed Frameworks */,
 			);
@@ -363,6 +387,7 @@
 		3BB050C31FD5A72A0095F42A /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
 		3BB050C41FD5A72A0095F42A /* sign_Sparkle_XPC_services.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = sign_Sparkle_XPC_services.sh; sourceTree = "<group>"; };
 		3BB050C51FD5B4F00095F42A /* credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = credits.rtf; sourceTree = "<group>"; };
+		3BB050C71FD5BFA40095F42A /* LetsMove.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LetsMove.xcodeproj; path = Vendor/LetsMove/LetsMove.xcodeproj; sourceTree = "<group>"; };
 		3BC85FBE1EB3866700BC47AE /* FlixDNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlixDNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FCF1EB3866700BC47AE /* FlixDNSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixDNSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FD31EB3866700BC47AE /* KeenowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowTests.swift; sourceTree = "<group>"; };
@@ -402,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B299E091FD0021700B61D82 /* SparkleCore.framework in Frameworks */,
+				3BB050D01FD5BFB80095F42A /* LetsMove.framework in Frameworks */,
 				3B3BB8D91FC081A700AD822D /* FlagKit.framework in Frameworks */,
 				3B41D24C1FC1C14100A8C865 /* MASPreferences.framework in Frameworks */,
 			);
@@ -519,6 +545,7 @@
 		3B53B7BB1FC080BD009FA90A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BB050C71FD5BFA40095F42A /* LetsMove.xcodeproj */,
 				3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */,
 				3B41D2461FC1C0FB00A8C865 /* MASPreferences.xcodeproj */,
 				3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */,
@@ -609,6 +636,15 @@
 				3BB050C41FD5A72A0095F42A /* sign_Sparkle_XPC_services.sh */,
 			);
 			path = Xcode;
+			sourceTree = "<group>";
+		};
+		3BB050C81FD5BFA40095F42A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BB050CD1FD5BFA40095F42A /* LetsMove Test.app */,
+				3BB050CF1FD5BFA40095F42A /* LetsMove.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3BC85FB51EB3866700BC47AE = {
@@ -758,6 +794,7 @@
 				3B299E051FCFFF1D00B61D82 /* PBXTargetDependency */,
 				3B299E081FCFFF1D00B61D82 /* PBXTargetDependency */,
 				3B299E0C1FD0021700B61D82 /* PBXTargetDependency */,
+				3BB050D31FD5BFB80095F42A /* PBXTargetDependency */,
 			);
 			name = FlixDNS;
 			productName = Keenow;
@@ -866,6 +903,10 @@
 				{
 					ProductGroup = 3B3BB8CE1FC0819900AD822D /* Products */;
 					ProjectRef = 3B3BB8CD1FC0819900AD822D /* FlagKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 3BB050C81FD5BFA40095F42A /* Products */;
+					ProjectRef = 3BB050C71FD5BFA40095F42A /* LetsMove.xcodeproj */;
 				},
 				{
 					ProductGroup = 3B41D2471FC1C0FB00A8C865 /* Products */;
@@ -1020,6 +1061,20 @@
 			fileType = wrapper.framework;
 			path = MASPreferences.framework;
 			remoteRef = 3B41D24A1FC1C0FB00A8C865 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3BB050CD1FD5BFA40095F42A /* LetsMove Test.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "LetsMove Test.app";
+			remoteRef = 3BB050CC1FD5BFA40095F42A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3BB050CF1FD5BFA40095F42A /* LetsMove.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LetsMove.framework;
+			remoteRef = 3BB050CE1FD5BFA40095F42A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1210,6 +1265,11 @@
 			isa = PBXTargetDependency;
 			target = 3B6C45191FC36C43004409A1 /* FlixDNS Privileged XPC Service */;
 			targetProxy = 3B6C45231FC36C43004409A1 /* PBXContainerItemProxy */;
+		};
+		3BB050D31FD5BFB80095F42A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LetsMove;
+			targetProxy = 3BB050D21FD5BFB80095F42A /* PBXContainerItemProxy */;
 		};
 		3BC85FD11EB3866700BC47AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

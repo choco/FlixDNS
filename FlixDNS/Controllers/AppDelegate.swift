@@ -9,6 +9,7 @@
 import Cocoa
 import MASPreferences
 import ServiceManagement
+import LetsMove
 
 extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
@@ -28,6 +29,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 PrefAboutViewController()],
             title: "Preferences")
     }()
+    
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        PFMoveToApplicationsFolderIfNecessary()
+    }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         shouldInstallHelper {

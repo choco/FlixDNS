@@ -8,3 +8,6 @@
 	path = Vendor/Sparkle
 	url = git@github.com:sparkle-project/Sparkle.git
 	branch = ui-separation-and-xpc
+[submodule "Vendor/LetsMove"]
+	path = Vendor/LetsMove
+	url = git@github.com:potionfactory/LetsMove.git
