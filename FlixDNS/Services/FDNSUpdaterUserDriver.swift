@@ -50,7 +50,7 @@ class FDNSUpdaterUserDriver : NSObject, SPUUserDriver {
                 response(.installLaterChoice)
             }
         } else {
-            response(.installLaterChoice)
+            response(.installUpdateChoice)
         }
     }
     

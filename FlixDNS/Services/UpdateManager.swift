@@ -23,7 +23,7 @@ class UpdateManager : NSObject, SPUUpdaterDelegate {
                              applicationBundle: Bundle.main,
                              userDriver: userDriver!,
                              delegate: self)
-        updater?.checkForUpdatesInBackground()
+        updater?.checkForUpdates()
         updater?.automaticallyChecksForUpdates = true
         updater?.automaticallyDownloadsUpdates = true
         updater?.updateCheckInterval = 60.0 * 60.0 * 24
@@ -48,6 +48,15 @@ class UpdateManager : NSObject, SPUUpdaterDelegate {
         case .backgroundScheduled:
             return false
         }
+    }
+    
+    func updater(_ updater: SPUUpdater, willInstallUpdateOnQuit item: SUAppcastItem, immediateInstallationBlock immediateInstallHandler: @escaping () -> Void) -> Bool {
+        immediateInstallHandler()
+        return true
+    }
+    
+    func updater(_ updater: SPUUpdater, shouldPostponeRelaunchForUpdate item: SUAppcastItem, untilInvokingBlock installHandler: @escaping () -> Void) -> Bool {
+        return false
     }
     
     func updaterShouldDownloadReleaseNotes(_ updater: SPUUpdater) -> Bool {
