@@ -30,7 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        updateManager.checkForUpdates()
         shouldInstallHelper {
             installed in
             if !installed {

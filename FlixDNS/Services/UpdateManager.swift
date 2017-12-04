@@ -23,7 +23,10 @@ class UpdateManager : NSObject, SPUUpdaterDelegate {
                              applicationBundle: Bundle.main,
                              userDriver: userDriver!,
                              delegate: self)
+        updater?.checkForUpdatesInBackground()
         updater?.automaticallyChecksForUpdates = true
+        updater?.automaticallyDownloadsUpdates = true
+        updater?.updateCheckInterval = 60.0 * 60.0 * 24
         do {
             try updater!.start()
             startedUpdater = true
@@ -32,7 +35,7 @@ class UpdateManager : NSObject, SPUUpdaterDelegate {
         }
     }
     
-    var canCheckForUpdates: Bool {
+    @objc dynamic var canCheckForUpdates: Bool {
         get {
             return startedUpdater && (userDriver?.canCheckForUpdates)!
         }

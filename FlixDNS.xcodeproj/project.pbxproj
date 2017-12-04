@@ -41,6 +41,7 @@
 		3B80D6B81FC58B42005CB44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80D6B71FC58B42005CB44A /* AppDelegate.swift */; };
 		3B80D6BA1FC58B42005CB44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B80D6B91FC58B42005CB44A /* Assets.xcassets */; };
 		3B80D6C61FC58C5E005CB44A /* FlixDNS Login Helper.app in Embed Login Helper */ = {isa = PBXBuildFile; fileRef = 3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3BB050C61FD5B4F10095F42A /* credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB050C51FD5B4F00095F42A /* credits.rtf */; };
 		3BC85FD41EB3866700BC47AE /* KeenowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FD31EB3866700BC47AE /* KeenowTests.swift */; };
 		3BC85FDF1EB3866700BC47AE /* KeenowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC85FDE1EB3866700BC47AE /* KeenowUITests.swift */; };
 		3BFE3CF31FC0841400646438 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE3CF21FC0841400646438 /* Profile.swift */; };
@@ -355,8 +356,13 @@
 		3B80D6B91FC58B42005CB44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B80D6BE1FC58B42005CB44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B80D6BF1FC58B42005CB44A /* FlixDNS_Login_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlixDNS_Login_Helper.entitlements; sourceTree = "<group>"; };
-		3BB050A71FD208470095F42A /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
-		3BB050A81FD208470095F42A /* sign_Sparkle_XPC_services.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = sign_Sparkle_XPC_services.sh; sourceTree = "<group>"; };
+		3BB050BE1FD5A72A0095F42A /* generate_appcast.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = generate_appcast.py; sourceTree = "<group>"; };
+		3BB050BF1FD5A72A0095F42A /* push_release_to_github.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = push_release_to_github.sh; sourceTree = "<group>"; };
+		3BB050C01FD5A72A0095F42A /* build_archive_export_app.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_archive_export_app.sh; sourceTree = "<group>"; };
+		3BB050C11FD5A72A0095F42A /* export_options.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = export_options.plist; sourceTree = "<group>"; };
+		3BB050C31FD5A72A0095F42A /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
+		3BB050C41FD5A72A0095F42A /* sign_Sparkle_XPC_services.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = sign_Sparkle_XPC_services.sh; sourceTree = "<group>"; };
+		3BB050C51FD5B4F00095F42A /* credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = credits.rtf; sourceTree = "<group>"; };
 		3BC85FBE1EB3866700BC47AE /* FlixDNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlixDNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FCF1EB3866700BC47AE /* FlixDNSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixDNSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC85FD31EB3866700BC47AE /* KeenowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeenowTests.swift; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 		3B235B4C1FC07451000E625B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3BB050C51FD5B4F00095F42A /* credits.rtf */,
 				3B299E111FD022F600B61D82 /* dsa_pub.pem */,
 				3B235B641FC07580000E625B /* Assets.xcassets */,
 				3B235B651FC07580000E625B /* Info.plist */,
@@ -578,10 +585,30 @@
 		3BB050A61FD208470095F42A /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				3BB050A71FD208470095F42A /* set_build_number.sh */,
-				3BB050A81FD208470095F42A /* sign_Sparkle_XPC_services.sh */,
+				3BB050BD1FD5A72A0095F42A /* Release */,
+				3BB050C21FD5A72A0095F42A /* Xcode */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3BB050BD1FD5A72A0095F42A /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				3BB050BE1FD5A72A0095F42A /* generate_appcast.py */,
+				3BB050BF1FD5A72A0095F42A /* push_release_to_github.sh */,
+				3BB050C01FD5A72A0095F42A /* build_archive_export_app.sh */,
+				3BB050C11FD5A72A0095F42A /* export_options.plist */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		3BB050C21FD5A72A0095F42A /* Xcode */ = {
+			isa = PBXGroup;
+			children = (
+				3BB050C31FD5A72A0095F42A /* set_build_number.sh */,
+				3BB050C41FD5A72A0095F42A /* sign_Sparkle_XPC_services.sh */,
+			);
+			path = Xcode;
 			sourceTree = "<group>";
 		};
 		3BC85FB51EB3866700BC47AE = {
@@ -716,8 +743,8 @@
 				3B6C45141FC36929004409A1 /* Embed Privileged Helper */,
 				3B6C45291FC36C43004409A1 /* Embed XPC Services */,
 				3B80D6C51FC58C3A005CB44A /* Embed Login Helper */,
-				3BB584321FD026EB000E1FD4 /* ShellScript */,
-				3BB050A51FD1FF1A0095F42A /* ShellScript */,
+				3BB584321FD026EB000E1FD4 /* Sign Sparkle XPC Services */,
+				3BB050A51FD1FF1A0095F42A /* Set Version and Build number from Git */,
 			);
 			buildRules = (
 			);
@@ -1018,6 +1045,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B299E121FD022F600B61D82 /* dsa_pub.pem in Resources */,
+				3BB050C61FD5B4F10095F42A /* credits.rtf in Resources */,
 				3B235B661FC07580000E625B /* Assets.xcassets in Resources */,
 				3B41D2591FC1C9D700A8C865 /* PrefAboutView.xib in Resources */,
 				3B235B631FC07577000E625B /* MainMenu.xib in Resources */,
@@ -1042,31 +1070,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BB050A51FD1FF1A0095F42A /* ShellScript */ = {
+		3BB050A51FD1FF1A0095F42A /* Set Version and Build number from Git */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Set Version and Build number from Git";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = $SRCROOT/Scripts/set_build_number.sh;
+			shellScript = $SRCROOT/Scripts/Xcode/set_build_number.sh;
 		};
-		3BB584321FD026EB000E1FD4 /* ShellScript */ = {
+		3BB584321FD026EB000E1FD4 /* Sign Sparkle XPC Services */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Sign Sparkle XPC Services";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = $SRCROOT/Scripts/sign_Sparkle_XPC_services.sh;
+			shellScript = $SRCROOT/Scripts/Xcode/sign_Sparkle_XPC_services.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 

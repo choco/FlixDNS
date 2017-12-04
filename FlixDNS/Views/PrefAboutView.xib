@@ -66,8 +66,19 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udh-5p-62c" userLabel="Toggle Git short hash">
+                    <rect key="frame" x="95" y="135" width="147" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="h2X-nk-fEL">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="versionLabelClicked:" target="-2" id="dLO-1V-D3q"/>
+                    </connections>
+                </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sp2-bi-PiN">
-                    <rect key="frame" x="99" y="74" width="145" height="17"/>
+                    <rect key="frame" x="106" y="74" width="138" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="dev@choco.me" id="tRf-0y-tCk">
                         <font key="font" metaFont="systemMedium" size="13"/>
@@ -76,7 +87,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="it1-Jk-OCJ" userLabel="Email Button" customClass="LinkButton" customModule="FlixDNS" customModuleProvider="target">
-                    <rect key="frame" x="101" y="72" width="141" height="21"/>
+                    <rect key="frame" x="108" y="72" width="134" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="2du-wT-adY">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -95,6 +106,7 @@
                     </buttonCell>
                     <connections>
                         <action selector="checkUpdateClicked:" target="-2" id="UiA-67-Eb0"/>
+                        <binding destination="-2" name="enabled" keyPath="self.updateManager.canCheckForUpdates" id="Mrt-A8-8dd"/>
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N33-65-Vts">
@@ -107,7 +119,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wRj-J8-xcR" userLabel="Website Button" customClass="LinkButton" customModule="FlixDNS" customModuleProvider="target">
-                    <rect key="frame" x="76" y="99" width="166" height="21"/>
+                    <rect key="frame" x="76" y="99" width="166" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="OpR-4U-YiC">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

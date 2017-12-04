@@ -35,15 +35,32 @@ class FDNSUpdaterUserDriver : NSObject, SPUUserDriver {
                                   informativeText: String,
                                   response: @escaping (SPUUpdateAlertChoice) -> Void)
     {
+        if (userInitiatedCheck)
+        {
+            let alert = NSAlert()
+            alert.alertStyle = .informational
+            alert.informativeText = informativeText
+            alert.messageText = "New update"
+            alert.addButton(withTitle: "Install Update and Restart")
+            alert.addButton(withTitle: "Cancel")
+            switch alert.runModal() {
+            case .alertFirstButtonReturn:
+                response(.installUpdateChoice)
+            default:
+                response(.installLaterChoice)
+            }
+        } else {
+            response(.installLaterChoice)
+        }
     }
     
     func showUpdateFound(with appcastItem: SUAppcastItem, userInitiated: Bool, reply: @escaping (SPUUpdateAlertChoice) -> Void) {
-        let informativeText = ""
+        let informativeText = "New update available to download"
         promptUserInitiatedCheck(userInitiatedCheck: userInitiated, informativeText: informativeText, response: reply)
     }
     
     func showDownloadedUpdateFound(with appcastItem: SUAppcastItem, userInitiated: Bool, reply: @escaping (SPUUpdateAlertChoice) -> Void) {
-        let informativeText = ""
+        let informativeText = "New update downloaded"
         promptUserInitiatedCheck(userInitiatedCheck: userInitiated, informativeText: informativeText, response: reply)
     }
     
@@ -51,12 +68,12 @@ class FDNSUpdaterUserDriver : NSObject, SPUUserDriver {
         if (userInitiated) {
             let alert = NSAlert()
             alert.alertStyle = .informational
-            alert.informativeText = ""
-            alert.messageText = ""
-            alert.addButton(withTitle: "")
+            alert.informativeText = "New update ready to install"
+            alert.messageText = "New update"
+            alert.addButton(withTitle: "Restart")
             alert.runModal()
         }
-        reply(.dismissUpdateInstallation)
+        reply(.installAndRelaunchUpdateNow)
     }
     
     func showInformationalUpdateFound(with appcastItem: SUAppcastItem, userInitiated: Bool, reply: @escaping (SPUInformationalUpdateAlertChoice) -> Void) {
@@ -75,9 +92,9 @@ class FDNSUpdaterUserDriver : NSObject, SPUUserDriver {
     func showUpdateNotFound(acknowledgement: @escaping () -> Void) {
         let alert = NSAlert()
         alert.alertStyle = .informational
-        alert.informativeText = ""
-        alert.messageText = ""
-        alert.addButton(withTitle: "")
+        alert.informativeText = "No update found"
+        alert.messageText = "No update found"
+        alert.addButton(withTitle: "OK")
         alert.runModal()
         acknowledgement()
     }
@@ -106,6 +123,7 @@ class FDNSUpdaterUserDriver : NSObject, SPUUserDriver {
     }
     
     func showReady(toInstallAndRelaunch installUpdateHandler: @escaping (SPUInstallUpdateStatus) -> Void) {
+        installUpdateHandler(.installAndRelaunchUpdateNow)
     }
     
     func showInstallingUpdate() {

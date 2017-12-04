@@ -20,6 +20,8 @@
 	<string>Set based on Git tag</string>
 	<key>CFBundleVersion</key>
 	<string>Set based on number of Git commits</string>
+	<key>GitShortHash</key>
+	<string>Set based on Git commit short hash</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>

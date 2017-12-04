@@ -22,18 +22,32 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
     }
     
     @IBOutlet weak var versionLabel: NSTextField!
+    private var version : String = ""
+    private var buildNumber : String = ""
+    private var gitShortHash : String = ""
+    private var showingGitShortHash : Bool = false
+    @objc dynamic let updateManager = UpdateManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let versionObject = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
         let buildNumberObject = Bundle.main.infoDictionary?["CFBundleVersion"]
-        let version = versionObject as? String ?? ""
-        let buildNumber = buildNumberObject as? String ?? ""
+        let gitShortHashObject = Bundle.main.infoDictionary?["GitShortHash"]
+        version = versionObject as? String ?? ""
+        buildNumber = buildNumberObject as? String ?? ""
+        gitShortHash = gitShortHashObject as? String ?? ""
         versionLabel.stringValue = "\(version) (\(buildNumber))"
     }
     
+    @IBAction func versionLabelClicked(_ sender: NSButton) {
+        versionLabel.stringValue = showingGitShortHash ?
+            "\(version) (\(buildNumber))" : "\(version) (\(gitShortHash))"
+        showingGitShortHash = !showingGitShortHash
+    }
+    
     @IBAction func checkUpdateClicked(_ sender: NSButton) {
+        updateManager.checkForUpdates()
     }
     
     @IBAction func visitWebsiteClicked(_ sender: NSButton) {
@@ -42,10 +56,7 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
     }
     
     @IBAction func submitFeedbackClicked(_ sender: NSButton) {
-        NSLog("HERE WE ARE!")
-        guard let url = URL(string: "mailto:dev@choco.me?subject=FlixDNS%20Feedback") else {
-            NSLog("HERE WE ARE! UFFI")
-            return }
+        guard let url = URL(string: "mailto:dev@choco.me?subject=FlixDNS%20Feedback") else { return }
         NSWorkspace.shared.open(url)
     }
     
@@ -54,7 +65,6 @@ class PrefAboutViewController: NSViewController, MASPreferencesViewController {
         NSWorkspace.shared.openFile(path)
     }
 }
-
 
 class LinkButton: NSButton {
     required init?(coder: NSCoder) {
