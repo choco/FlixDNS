@@ -20,7 +20,7 @@ VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$INFOPL
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE_DIR/$INFOPLIST_FILE")
 GIT_SHORT_HASH=$(/usr/libexec/PlistBuddy -c "Print GitShortHash" "$INFOPLIST_FILE_DIR/$INFOPLIST_FILE")
 
-zip -r "$BUILD_DIR/$PROJECT_NAME-v${VERSION}-b${BUILD_NUMBER}.zip" "$BUILD_DIR/$PROJECT_NAME.app"
+ditto -c -k --sequesterRsrc --keepParent "$BUILD_DIR/$PROJECT_NAME.app" "$BUILD_DIR/$PROJECT_NAME.app.zip"
 find "$BUILD_DIR" -mindepth 1 -maxdepth 1 -not -name "*.zip" -not -name "*.app" -print0 | xargs -0 rm -rf
 
 cat > "$BUILD_DIR/version.json" <<EOF
