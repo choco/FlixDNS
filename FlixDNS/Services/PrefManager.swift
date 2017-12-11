@@ -10,7 +10,6 @@ import Foundation
 
 struct Keys {
     static let accountEmail = "accountEmail"
-    static let startAtLogin = "startAtLogin"
 }
 
 
@@ -26,7 +25,6 @@ class PrefManager {
     private func registerFactoryDefaults() {
         let factoryDefaults = [
             Keys.accountEmail: String(""),
-            Keys.startAtLogin: Bool(false),
             ] as [String : Any]
         
         userDefaults.register(defaults: factoryDefaults)
@@ -38,8 +36,7 @@ class PrefManager {
     
     func reset() {
         userDefaults.removeObject(forKey: Keys.accountEmail)
-        userDefaults.removeObject(forKey: Keys.startAtLogin)
-        
+
         synchronize()
     }
 }

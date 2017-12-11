@@ -10,7 +10,7 @@
 		3B235B511FC074B1000E625B /* UnblockUsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B501FC074B1000E625B /* UnblockUsAPI.swift */; };
 		3B235B611FC07577000E625B /* StatusBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B5E1FC07577000E625B /* StatusBarMenuController.swift */; };
 		3B235B621FC07577000E625B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235B5F1FC07577000E625B /* AppDelegate.swift */; };
-		3B235B631FC07577000E625B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B601FC07577000E625B /* MainMenu.xib */; };
+		3B235B631FC07577000E625B /* StatusBarMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B601FC07577000E625B /* StatusBarMenu.xib */; };
 		3B235B661FC07580000E625B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B235B641FC07580000E625B /* Assets.xcassets */; };
 		3B299DFD1FCFFF1D00B61D82 /* org.sparkle-project.Downloader.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B299DEC1FCFF9F800B61D82 /* org.sparkle-project.Downloader.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3B299E001FCFFF1D00B61D82 /* org.sparkle-project.InstallerConnection.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 3B299DE81FCFF9F800B61D82 /* org.sparkle-project.InstallerConnection.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -41,6 +41,7 @@
 		3B80D6B81FC58B42005CB44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80D6B71FC58B42005CB44A /* AppDelegate.swift */; };
 		3B80D6BA1FC58B42005CB44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B80D6B91FC58B42005CB44A /* Assets.xcassets */; };
 		3B80D6C61FC58C5E005CB44A /* FlixDNS Login Helper.app in Embed Login Helper */ = {isa = PBXBuildFile; fileRef = 3B80D6B51FC58B42005CB44A /* FlixDNS Login Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B90CACA1FD6ADB8009290AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B90CAC91FD6ADB8009290AE /* main.swift */; };
 		3BB050C61FD5B4F10095F42A /* credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB050C51FD5B4F00095F42A /* credits.rtf */; };
 		3BB050D01FD5BFB80095F42A /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB050CF1FD5BFA40095F42A /* LetsMove.framework */; };
 		3BB050D11FD5BFB80095F42A /* LetsMove.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB050CF1FD5BFA40095F42A /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -349,10 +350,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B0C5A611FD6F6E000931B11 /* FlixDNS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlixDNS.entitlements; sourceTree = "<group>"; };
 		3B235B501FC074B1000E625B /* UnblockUsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnblockUsAPI.swift; path = FlixDNS/Services/UnblockUsAPI.swift; sourceTree = SOURCE_ROOT; };
 		3B235B5E1FC07577000E625B /* StatusBarMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarMenuController.swift; sourceTree = "<group>"; };
 		3B235B5F1FC07577000E625B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B235B601FC07577000E625B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		3B235B601FC07577000E625B /* StatusBarMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarMenu.xib; sourceTree = "<group>"; };
 		3B235B641FC07580000E625B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B235B651FC07580000E625B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B299DC81FCFF9F700B61D82 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		3B80D6B91FC58B42005CB44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B80D6BE1FC58B42005CB44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B80D6BF1FC58B42005CB44A /* FlixDNS_Login_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlixDNS_Login_Helper.entitlements; sourceTree = "<group>"; };
+		3B90CAC91FD6ADB8009290AE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3BB050BE1FD5A72A0095F42A /* generate_appcast.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = generate_appcast.py; sourceTree = "<group>"; };
 		3BB050BF1FD5A72A0095F42A /* push_release_to_github.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = push_release_to_github.sh; sourceTree = "<group>"; };
 		3BB050C01FD5A72A0095F42A /* build_archive_export_app.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_archive_export_app.sh; sourceTree = "<group>"; };
@@ -453,6 +456,7 @@
 		3B235B4C1FC07451000E625B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3B0C5A611FD6F6E000931B11 /* FlixDNS.entitlements */,
 				3BB050C51FD5B4F00095F42A /* credits.rtf */,
 				3B299E111FD022F600B61D82 /* dsa_pub.pem */,
 				3B235B641FC07580000E625B /* Assets.xcassets */,
@@ -469,6 +473,7 @@
 				3B41D2501FC1C55C00A8C865 /* PrefGeneralViewController.swift */,
 				3B41D2521FC1C57500A8C865 /* PrefAboutViewController.swift */,
 				3B41D2541FC1C79E00A8C865 /* PrefWindowController.swift */,
+				3B90CAC91FD6ADB8009290AE /* main.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -487,7 +492,7 @@
 		3B235B4F1FC07482000E625B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3B235B601FC07577000E625B /* MainMenu.xib */,
+				3B235B601FC07577000E625B /* StatusBarMenu.xib */,
 				3B41D2561FC1C9BA00A8C865 /* PrefGeneralView.xib */,
 				3B41D2581FC1C9D700A8C865 /* PrefAboutView.xib */,
 			);
@@ -871,6 +876,11 @@
 						DevelopmentTeam = VJ8592T25A;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					3BC85FCE1EB3866700BC47AE = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -1103,7 +1113,7 @@
 				3BB050C61FD5B4F10095F42A /* credits.rtf in Resources */,
 				3B235B661FC07580000E625B /* Assets.xcassets in Resources */,
 				3B41D2591FC1C9D700A8C865 /* PrefAboutView.xib in Resources */,
-				3B235B631FC07577000E625B /* MainMenu.xib in Resources */,
+				3B235B631FC07577000E625B /* StatusBarMenu.xib in Resources */,
 				3B41D2571FC1C9BA00A8C865 /* PrefGeneralView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,6 +1198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6C45351FC37FF9004409A1 /* PrivilegedServiceProtocol.swift in Sources */,
+				3B90CACA1FD6ADB8009290AE /* main.swift in Sources */,
 				3B235B621FC07577000E625B /* AppDelegate.swift in Sources */,
 				3B41D2531FC1C57500A8C865 /* PrefAboutViewController.swift in Sources */,
 				3BFE3CF31FC0841400646438 /* Profile.swift in Sources */,
@@ -1545,6 +1556,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlixDNS/Assets/FlixDNS.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1566,6 +1578,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlixDNS/Assets/FlixDNS.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;

@@ -23,7 +23,6 @@ class UpdateManager : NSObject, SPUUpdaterDelegate {
                              applicationBundle: Bundle.main,
                              userDriver: userDriver!,
                              delegate: self)
-        updater?.checkForUpdates()
         updater?.automaticallyChecksForUpdates = true
         updater?.automaticallyDownloadsUpdates = true
         updater?.updateCheckInterval = 60.0 * 60.0 * 24

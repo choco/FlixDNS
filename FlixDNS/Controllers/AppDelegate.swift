@@ -15,12 +15,12 @@ extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
 }
 
-@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let Prefs = PrefManager.shared
+    var Prefs: PrefManager!
     var xpcPrivilegedHelperConnection: NSXPCConnection?
     var privilegedHelperInstalled: Bool = false
-    let updateManager = UpdateManager.shared
+    var updateManager: UpdateManager!
+    var statusBarMenuController: StatusBarMenuController!
     
     lazy var preferenceWindowController: PrefWindowController = {
         return PrefWindowController(
@@ -31,10 +31,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     
     func applicationWillFinishLaunching(_ notification: Notification) {
+        let runningApps = NSWorkspace.shared.runningApplications
+        if (runningApps.filter { $0.bundleIdentifier == Bundle.main.bundleIdentifier! }).count > 1 {
+            let alert: NSAlert = NSAlert()
+            alert.messageText = "An istance of FlixDNS is already running"
+            alert.informativeText = "Please use the running istance"
+            alert.alertStyle = NSAlert.Style.warning
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+            
+            NSApplication.shared.terminate(self)
+        }
+
         PFMoveToApplicationsFolderIfNecessary()
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let helper = helperConnection()?.remoteObjectProxyWithErrorHandler { error in
+            NSLog("Fanculo")
+            } as! PrivilegedHelperProtocol
+        
+        helper.installSmartDNSConf(UnblockUsAPI.SmartDNSConf) { result, error_msg in
+            if result {
+                NSLog("Resolver DNS directory created successfuly")
+            } else {
+                NSLog("SmartDNSConfiguration installation failed: \(error_msg)")
+            }
+        }
+        
         shouldInstallHelper {
             installed in
             if !installed {
@@ -46,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.privilegedHelperInstalled = true
             }
         }
-        
+
         let launcherAppIdentifier = "me.choco.FlixDNS-Login-Helper"
         let runningApps = NSWorkspace.shared.runningApplications
         let startedAtLogin = !runningApps.filter { $0.bundleIdentifier == launcherAppIdentifier }.isEmpty
@@ -55,6 +79,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DistributedNotificationCenter.default().post(name: .killLauncher,
                                                          object: Bundle.main.bundleIdentifier!)
         }
+        
+        // Init preferences
+        Prefs = PrefManager.shared
+        // Init update manager
+        updateManager = UpdateManager.shared
+        updateManager.checkForUpdates()
+        // Init status bar menu controller
+        statusBarMenuController = StatusBarMenuController()
+        statusBarMenuController.showWindow(self)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -91,7 +124,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var authRef:AuthorizationRef?
         var authItem = AuthorizationItem(name: kSMRightBlessPrivilegedHelper, valueLength: 0, value:UnsafeMutableRawPointer(bitPattern: 0), flags: 0)
         var authRights:AuthorizationRights = AuthorizationRights(count: 1, items:&authItem)
-        let authFlags: AuthorizationFlags = [ [], .extendRights, .interactionAllowed, .preAuthorize ]
+        let authFlags: AuthorizationFlags = [ .extendRights, .interactionAllowed, .preAuthorize ]
         
         let status = AuthorizationCreate(&authRights, nil, authFlags, &authRef)
         if (status != errAuthorizationSuccess){
@@ -115,7 +148,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func helperConnection() -> NSXPCConnection? {
         if (self.xpcPrivilegedHelperConnection == nil){
             self.xpcPrivilegedHelperConnection = NSXPCConnection(machServiceName:PrivilegedHelperConstants.machServiceName, options:NSXPCConnection.Options.privileged)
-            self.xpcPrivilegedHelperConnection!.remoteObjectInterface = NSXPCInterface(with:PrivilegedHelperProtocol.self)
+            
+            self.xpcPrivilegedHelperConnection!.remoteObjectInterface = NSXPCInterface(with: PrivilegedHelperProtocol.self)
             self.xpcPrivilegedHelperConnection!.invalidationHandler = {
                 self.xpcPrivilegedHelperConnection?.invalidationHandler = nil
                 OperationQueue.main.addOperation(){

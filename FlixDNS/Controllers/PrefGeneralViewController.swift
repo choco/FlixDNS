@@ -26,6 +26,19 @@ class PrefGeneralViewController: NSViewController, NSTextFieldDelegate, MASPrefe
     var appDelegate: AppDelegate!
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var launchAtLogin: NSButton!
+    let launcherAppIdentifier = "me.choco.FlixDNS-Login-Helper"
+    
+    @objc
+    dynamic private var startAtLogin : Bool {
+        get {
+            guard let jobDicts = SMCopyAllJobDictionaries( kSMDomainUserLaunchd ).takeRetainedValue() as? [[String:Any]] else { return false }
+            return jobDicts.first(where: { $0["Label"] as! String == launcherAppIdentifier }) != nil
+        } set {
+            if !SMLoginItemSetEnabled(launcherAppIdentifier as CFString, newValue) {
+                NSLog("SMLoginItemSetEnabled failed")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +57,10 @@ class PrefGeneralViewController: NSViewController, NSTextFieldDelegate, MASPrefe
     
     func updateFromPrefs() {
         emailTextField.stringValue = Prefs.userDefaults.string(forKey: Keys.accountEmail)!
-        launchAtLogin.state = Prefs.userDefaults.bool(forKey: Keys.startAtLogin) ? .on : .off
+        launchAtLogin.state = startAtLogin ? .on : .off
     }
     
     @IBAction func launchAtLoginClicked(_ sender: NSButton) {
-        Prefs.userDefaults.set(sender.state == .on, forKey: Keys.startAtLogin)
-        let launcherAppIdentifier = "me.choco.FlixDNS-Login-Helper"
-        SMLoginItemSetEnabled(launcherAppIdentifier as CFString, sender.state == .on)
+        startAtLogin = sender.state == .on
     }
 }

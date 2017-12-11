@@ -15,23 +15,24 @@ class UnblockUsAPI {
     private let STATUS_ENDPOINT  = "get-status.js"
     private let COUNTRY_ENDPOINT = "set-country.js"
     
-    static let REDIRECTED_DOMAINS = [
-        "hulu.com",
-        "hbo.com",
-        "hbogo.com",
-        "netflix.com",
-        "nflximg.net",
-        "nflxvideo.net",
-        "nflxext.com",
-        "nflxso.net",
-        "unblock-us.com"
-    ]
-    
-    static let DNS = [
-        "64.145.73.5",
-        "209.107.219.5"
-    ]
-    
+    static let SmartDNSConf = SmartDNSConfiguration(
+        revision: 1,
+        DNS: [
+            "64.145.73.5",
+            "209.107.219.5"
+        ],
+        domains: [
+            "hulu.com",
+            "hbo.com",
+            "hbogo.com",
+            "netflix.com",
+            "nflximg.net",
+            "nflxvideo.net",
+            "nflxext.com",
+            "nflxso.net",
+            "unblock-us.com"
+        ])
+
     init(auth_email: String) {
         self.auth_email = auth_email
     }

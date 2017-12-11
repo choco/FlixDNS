@@ -17,7 +17,10 @@ enum ItemStatus {
     case Unknown
 }
 
-class StatusBarMenuController: NSObject, NSMenuDelegate {
+class StatusBarMenuController: NSWindowController, NSMenuDelegate {
+    override var windowNibName: NSNib.Name {
+        get { return NSNib.Name("StatusBarMenu") }
+    }
     @IBOutlet weak var statusbarMenu: NSMenu!
     @IBOutlet weak var ipItem: NSMenuItem!
     @IBOutlet weak var dnsItem: NSMenuItem!
@@ -38,7 +41,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate {
     var isProfileUpdating = false
     var isRegionUpdating = false
     
-    override func awakeFromNib() {
+    override func windowDidLoad() {
         statusbarMenu.delegate = self
         statusItem.menu = statusbarMenu
         
@@ -128,30 +131,21 @@ class StatusBarMenuController: NSObject, NSMenuDelegate {
                 NSLog("XPC Privileged Helper comunication failed")
                 self.setMenuItem(item: self.dnsItem, status: .Disabled)
                 } as! PrivilegedHelperProtocol
-            helper.setCustomDNS(dns: UnblockUsAPI.DNS,
-                                for: UnblockUsAPI.REDIRECTED_DOMAINS) { result, failed_domains in
+            helper.installSmartDNSConf(UnblockUsAPI.SmartDNSConf) { result, error_msg in
                                     if result {
                                         NSLog("Resolver DNS directory created successfuly")
-                                        if failed_domains.count == 0 {
-                                            NSLog("All DNS domains redirected successfuly")
-                                            helper.flushDNSCache(reply: {exit_code, output in
-                                                if exit_code != 0 {
-                                                    NSLog("DNS cache flush failed")
-                                                }
-                                            })
-                                            self.isProfileUpdating = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-                                                self.isProfileUpdating = false
-                                                self.updateProfile()
+                                        helper.flushDNSCache(reply: {exit_code, output in
+                                            if exit_code != 0 {
+                                                NSLog("DNS cache flush failed")
                                             }
-                                        } else {
-                                            for (domain, reason) in failed_domains {
-                                                NSLog("\(domain) redirection failed, error: \(reason)")
-                                            }
-                                            setMenuItem(item: dnsItem, status: .Disabled)
+                                        })
+                                        self.isProfileUpdating = true
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+                                            self.isProfileUpdating = false
+                                            self.updateProfile()
                                         }
                                     } else {
-                                        NSLog("Resolver DNS directory creation failed")
+                                        NSLog("SmartDNSConfiguration installation failed: \(error_msg)")
                                         self.setMenuItem(item: self.dnsItem, status: .Disabled)
                                     }
             }

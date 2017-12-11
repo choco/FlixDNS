@@ -6,61 +6,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+        <customObject id="-2" userLabel="File's Owner" customClass="StatusBarMenuController" customModule="FlixDNS" customModuleProvider="target">
             <connections>
-                <outlet property="delegate" destination="9dJ-Gj-uGK" id="Xto-vr-5qJ"/>
+                <outlet property="dnsItem" destination="LcK-SN-K4z" id="bAN-pX-Upa"/>
+                <outlet property="ipItem" destination="DNa-Mf-mbo" id="g0A-Oc-0zn"/>
+                <outlet property="regionItem" destination="IV3-f7-Miw" id="rht-ht-KId"/>
+                <outlet property="regionsMenu" destination="KA4-nf-64N" id="qgp-kF-dHf"/>
+                <outlet property="statusbarMenu" destination="5A7-5m-yXg" id="cXu-DR-Lib"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="9dJ-Gj-uGK" customClass="AppDelegate" customModule="FlixDNS" customModuleProvider="target"/>
-        <customObject id="OCm-bw-zhx" customClass="StatusBarMenuController" customModule="FlixDNS" customModuleProvider="target">
-            <connections>
-                <outlet property="dnsItem" destination="LcK-SN-K4z" id="df1-aX-LzP"/>
-                <outlet property="ipItem" destination="DNa-Mf-mbo" id="ShS-nn-k0g"/>
-                <outlet property="regionItem" destination="IV3-f7-Miw" id="5OU-sF-uN4"/>
-                <outlet property="regionsMenu" destination="KA4-nf-64N" id="I3s-6v-V3N"/>
-                <outlet property="statusbarMenu" destination="5A7-5m-yXg" id="NjQ-Fg-8OB"/>
-            </connections>
-        </customObject>
-        <menu autoenablesItems="NO" id="5A7-5m-yXg" userLabel="Status Bar Menu">
-            <items>
-                <menuItem title="  IP: Checking..." image="NSStatusPartiallyAvailable" id="DNa-Mf-mbo">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="updateIP:" target="OCm-bw-zhx" id="L0M-bt-ciK"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="  Unblock-Us DNS" image="NSStatusPartiallyAvailable" id="LcK-SN-K4z">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="updateDNS:" target="OCm-bw-zhx" id="Pjw-su-uhr"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="  Region" image="NSStatusPartiallyAvailable" id="IV3-f7-Miw">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="  Region" autoenablesItems="NO" id="KA4-nf-64N">
-                        <items>
-                            <menuItem isSeparatorItem="YES" id="Jyh-6f-Ijt"/>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="4if-gx-YLO"/>
-                <menuItem title="Preferences..." id="gJp-My-pfJ">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="preferencesClicked:" target="OCm-bw-zhx" id="MLS-AP-6LS"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Quit FlixDNS" keyEquivalent="q" id="vFX-hf-MEn">
-                    <connections>
-                        <action selector="quitClicked:" target="OCm-bw-zhx" id="cD6-0v-zp6"/>
-                    </connections>
-                </menuItem>
-            </items>
-            <point key="canvasLocation" x="139" y="165.5"/>
-        </menu>
         <customView id="0AB-Yg-o7M">
             <rect key="frame" x="0.0" y="0.0" width="193" height="21"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +52,43 @@
             </subviews>
             <point key="canvasLocation" x="-4.5" y="38.5"/>
         </customView>
+        <menu autoenablesItems="NO" id="5A7-5m-yXg" userLabel="Status Bar Menu">
+            <items>
+                <menuItem title="  IP: Checking..." image="NSStatusPartiallyAvailable" id="DNa-Mf-mbo">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateIP:" target="-2" id="fqL-Go-sm4"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="  Unblock-Us DNS" image="NSStatusPartiallyAvailable" id="LcK-SN-K4z">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateDNS:" target="-2" id="cyc-eq-jMy"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="  Region" image="NSStatusPartiallyAvailable" id="IV3-f7-Miw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="  Region" autoenablesItems="NO" id="KA4-nf-64N">
+                        <items>
+                            <menuItem isSeparatorItem="YES" id="Jyh-6f-Ijt"/>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="4if-gx-YLO"/>
+                <menuItem title="Preferences..." id="gJp-My-pfJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="-2" id="lST-iN-vCF"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit FlixDNS" keyEquivalent="q" id="vFX-hf-MEn">
+                    <connections>
+                        <action selector="quitClicked:" target="-2" id="1Lu-qf-CTV"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="139" y="165.5"/>
+        </menu>
     </objects>
     <resources>
         <image name="NSMenuOnStateTemplate" width="12" height="12"/>

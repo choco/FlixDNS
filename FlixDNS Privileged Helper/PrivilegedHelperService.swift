@@ -9,11 +9,12 @@
 import Foundation
 
 class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListenerDelegate{
-    
     private var connections = [NSXPCConnection]()
     private var listener:NSXPCListener
     private var shouldQuit = false
     private var shouldQuitCheckInterval = 1.0
+    private let resolverDir = "/etc/resolver"
+    private let configurationFile = "FlixDNS_conf"
     
     override init(){
         self.listener = NSXPCListener(machServiceName:PrivilegedHelperConstants.machServiceName)
@@ -42,8 +43,16 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
         
         // MARK: Here a check should be added to verify the application that is calling the helper
         // For example, checking that the codesigning is equal on the calling binary as this helper.
-        
-        newConnection.exportedInterface = NSXPCInterface(with:PrivilegedHelperProtocol.self)
+        let interface = NSXPCInterface(with: PrivilegedHelperProtocol.self)
+        let sel = #selector(installSmartDNSConf(_:reply:))
+        let acceptedClassesSet = interface.classes(for: sel, argumentIndex: 0, ofReply: false)
+        let nssetVersion = NSSet(set: acceptedClassesSet)
+        // We need to pass through NSSet to add those WTF?!?!?
+        let nssetVersionModified = nssetVersion.addingObjects(from: [NSArray.self, NSString.self, NSNumber.self])
+        let finalSet = nssetVersionModified as Set
+        interface.setClasses(finalSet, for: sel, argumentIndex: 0, ofReply: false)
+
+        newConnection.exportedInterface = interface
         newConnection.exportedObject = self;
         newConnection.invalidationHandler = (() -> Void)? {
             if let indexValue = self.connections.index(of: newConnection) {
@@ -67,8 +76,18 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
     }
     
     /*
-     Functions to run from the main app
+     Return installed SmartDNSConfiguration revision
+     returns 0 if no smartDNSConf is installed
      */
+    func getInstalledSmartDNSConfRevision(reply: (UInt) -> Void) {
+        if let conf = getInstalledSmartDNSConf() {
+            reply(conf.revision)
+            return
+        }
+        reply(0)
+        return
+    }
+
     func flushDNSCache(reply: @escaping (NSNumber, String) -> Void) {
         // Send a hang up to mDNSResponder, launchd will restart the daemon
         // and the DNS cache will be cleared as spillover effect
@@ -79,44 +98,98 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
         runTask(command: command, arguments: arguments, reply:reply)
     }
     
-    func setCustomDNS(dns: [String], for domains: [String], reply: (Bool, [String: String]) -> Void) {
-    var failedDomains = [String: String]()
-        let path = "/etc/resolver"
-        if !directoryExistsAtPath(path) {
-            do {
-                try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true)
-            } catch let error as NSError {
-                NSLog("Unable to create directory \(error.debugDescription)")
-                reply(false, failedDomains)
+    func installSmartDNSConf(_ smartDNSConf: SmartDNSConfiguration, reply: (Bool, String) -> Void) {
+        // If there's a conf installed remove it before installing new one
+        if let conf = getInstalledSmartDNSConf() {
+            if !removeInstalledSmartDNSConf(conf) {
+                reply(false, "Couldn't remove previous smartDNSConf")
                 return
             }
         }
-        let fileContent = dns.map { "nameserver \($0)" }.joined(separator: "\n")
-        let filesPath = domains.map { "\(path)/\($0)" }
-        for (index, file) in filesPath.enumerated() {
-            if FileManager.default.fileExists(atPath: file) {
-                do {
-                    let oldFileContent = try String(contentsOfFile: file, encoding: .utf8)
-                    if oldFileContent != fileContent {
-                        do {
-                            try fileContent.write(toFile: file, atomically: false, encoding: .utf8)
-                        } catch {
-                            failedDomains[domains[index]] = "Couldn't write to file"
-                        }
-                    }
-                }
-                catch {
-                    failedDomains[domains[index]] = "Couldn't read file"
-                }
-            } else {
-                do {
-                    try fileContent.write(toFile: file, atomically: false, encoding: .utf8)
-                } catch {
-                    failedDomains[domains[index]] = "Couldn't write to file"
-                }
+        
+        // Create /etc/resolver dir if not present
+        if !directoryExistsAtPath(resolverDir) {
+            do {
+                try FileManager.default.createDirectory(atPath: resolverDir, withIntermediateDirectories: true)
+            } catch {
+                reply(false, "Unable to create directory: \(error)")
+                return
             }
         }
-        reply(true, failedDomains)
+        
+        // Create conf files for the smartDNSConf domains using the DNS
+        let fileContent = smartDNSConf.DNS.map { "nameserver \($0)" }.joined(separator: "\n")
+        let filesPath = smartDNSConf.domains.map { "\(resolverDir)/\($0)" }
+        for file in filesPath {
+            do {
+                if FileManager.default.fileExists(atPath: file) {
+                    let oldFileContent = try String(contentsOfFile: file, encoding: .utf8)
+                    if oldFileContent != fileContent {
+                        try fileContent.write(toFile: file, atomically: false, encoding: .utf8)
+                    }
+                } else {
+                    try fileContent.write(toFile: file, atomically: false, encoding: .utf8)
+                }
+            } catch {
+                reply(false, "Error updating domain conf for file \(file):\(error)")
+                return
+            }
+        }
+        
+        // Write a json serialized version of SmartDNSConf we just installed
+        // so we can later check which is currently installed
+        let installedConfPath = "\(resolverDir)/\(configurationFile)"
+        do {
+            if FileManager.default.fileExists(atPath: installedConfPath) {
+                try FileManager.default.removeItem(atPath: installedConfPath)
+            }
+            let payload: Data = try JSONEncoder().encode(smartDNSConf)
+            if let jsonString = String(data: payload, encoding: .utf8) {
+                try jsonString.write(toFile: installedConfPath, atomically: true, encoding: .utf8)
+            }
+        } catch {
+            reply(false, "Error writing installed smartDNS configuration; \(error)")
+            return
+        }
+
+        reply(true, "SmartDNSConfiguration installed successfuly")
+    }
+    
+    private func getInstalledSmartDNSConf() -> SmartDNSConfiguration? {
+        let installedConfPath = "\(resolverDir)/\(configurationFile)"
+        if FileManager.default.fileExists(atPath: installedConfPath) {
+            do {
+                let payload = try Data(contentsOf: URL(fileURLWithPath: installedConfPath))
+                let smartDNSConf = try JSONDecoder().decode(SmartDNSConfiguration.self, from: payload)
+                return smartDNSConf
+            } catch {
+                NSLog("Couldn't load installed SmartDNSConf")
+                return nil
+            }
+        }
+        NSLog("No SmartDNSConfiguration installed")
+        return nil
+    }
+    
+    private func removeInstalledSmartDNSConf(_ conf: SmartDNSConfiguration) -> Bool {
+        let filesPath = conf.domains.map { "\(resolverDir)/\($0)" }
+        for file in filesPath {
+            do {
+                if FileManager.default.fileExists(atPath: file) {
+                    try FileManager.default.removeItem(atPath: file)
+                }
+            } catch {
+                NSLog("Couldn't remove domain file \(file): \(error)")
+                return false
+            }
+        }
+        do {
+            try FileManager.default.removeItem(atPath: "\(resolverDir)/\(configurationFile)")
+            return true
+        } catch {
+            NSLog("Error couldn't remove smartDNS configuration file: \(error)")
+            return false
+        }
     }
     
     private func directoryExistsAtPath(_ path: String) -> Bool {
