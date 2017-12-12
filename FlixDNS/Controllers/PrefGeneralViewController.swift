@@ -63,4 +63,94 @@ class PrefGeneralViewController: NSViewController, NSTextFieldDelegate, MASPrefe
     @IBAction func launchAtLoginClicked(_ sender: NSButton) {
         startAtLogin = sender.state == .on
     }
+    
+    @IBAction func reinstallSmartDNSConfClicked(_ sender: NSButton) {
+        let helper = appDelegate?.helperConnection()?.remoteObjectProxyWithErrorHandler { error in
+            NSLog("XPC Privileged Helper comunication failed")
+            DispatchQueue.main.async {
+                sender.isEnabled = true
+            }
+            } as! PrivilegedHelperProtocol
+        sender.isEnabled = false
+        guard let jobDicts = SMCopyAllJobDictionaries( kSMDomainSystemLaunchd ).takeRetainedValue() as? [[String:Any]] else { return }
+        let running = jobDicts.first(where: { $0["Label"] as! String == PrivilegedHelperConstants.machServiceName }) != nil
+        NSLog("IS running \(running)")
+        helper.installSmartDNSConf(revision: UnblockUsAPI.SmartDNSConf.revision,
+                                   dns: UnblockUsAPI.SmartDNSConf.DNS,
+                                   domains: UnblockUsAPI.SmartDNSConf.domains) { result, error_msg in
+                                    if result {
+                                        DispatchQueue.main.async {
+                                            let alert: NSAlert = NSAlert()
+                                            alert.messageText = "SmartDNS Configuration was reinstalled successfully"
+                                            alert.informativeText = "The domains and corresponding DNS have been correctly reinstalled"
+                                            alert.alertStyle = .informational
+                                            alert.addButton(withTitle: "OK")
+                                            alert.runModal()
+                                        }
+                                        helper.flushDNSCache(reply: {exit_code, output in
+                                            if exit_code != 0 {
+                                                NSLog("DNS cache flush failed")
+                                            }
+                                        })
+                                    } else {
+                                        DispatchQueue.main.async {
+                                            let alert: NSAlert = NSAlert()
+                                            alert.messageText = "SmartDNS Configuration reinstallation failed"
+                                            alert.informativeText = "FlixDNS wasn't able to reinstall the SmartDNS configuration"
+                                            alert.alertStyle = .critical
+                                            alert.addButton(withTitle: "OK")
+                                            alert.runModal()
+                                        }
+                                        NSLog("SmartDNSConfiguration reinstallation failed: \(error_msg)")
+                                    }
+                                    DispatchQueue.main.async {
+                                        sender.isEnabled = true
+                                    }
+        }
+    }
+    
+    @IBAction func uninstallFlixDNS(_ sender: NSButton) {
+        let helper = appDelegate?.helperConnection()?.remoteObjectProxyWithErrorHandler { error in
+            NSLog("XPC Privileged Helper comunication failed")
+            DispatchQueue.main.async {
+                sender.isEnabled = true
+            }
+            } as! PrivilegedHelperProtocol
+        sender.isEnabled = false
+        helper.uninstallHelper { result, err_msg in
+            if result {
+                DispatchQueue.main.asyncAfter(deadline: .now() + PrivilegedHelperConstants.shutDownTime*2) {
+                    guard let jobDicts = SMCopyAllJobDictionaries( kSMDomainSystemLaunchd ).takeRetainedValue() as? [[String:Any]] else { return }
+                    let running = jobDicts.first(where: { $0["Label"] as! String == PrivilegedHelperConstants.machServiceName }) != nil
+                    if running {
+                        self.uninstallationFailedAlert(sender, err_msg: err_msg)
+                    } else {
+                        let alert: NSAlert = NSAlert()
+                        alert.messageText = "FlixDNS uninstallation was successfull"
+                        alert.informativeText = "The application will now terminate, move the application to the Trash to complete the uninstallation process"
+                        alert.alertStyle = .informational
+                        alert.addButton(withTitle: "OK")
+                        alert.runModal()
+                        
+                        NSApplication.shared.terminate(self)
+                    }
+                }
+            } else {
+                self.uninstallationFailedAlert(sender, err_msg: err_msg)
+            }
+        }
+    }
+    
+    private func uninstallationFailedAlert(_ sender: NSButton, err_msg: String) {
+        DispatchQueue.main.async {
+            let alert: NSAlert = NSAlert()
+            alert.messageText = "FlixDNS uninstallation failed"
+            alert.informativeText = "The uninstall process failed, please report the issue to the developer"
+            alert.alertStyle = .critical
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+            sender.isEnabled = true
+        }
+        NSLog("Error couldn't uninstall Privileged Helper tool \(err_msg)")
+    }
 }

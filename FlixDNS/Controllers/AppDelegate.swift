@@ -47,18 +47,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let helper = helperConnection()?.remoteObjectProxyWithErrorHandler { error in
-            NSLog("Fanculo")
-            } as! PrivilegedHelperProtocol
-        
-        helper.installSmartDNSConf(UnblockUsAPI.SmartDNSConf) { result, error_msg in
-            if result {
-                NSLog("Resolver DNS directory created successfuly")
-            } else {
-                NSLog("SmartDNSConfiguration installation failed: \(error_msg)")
-            }
-        }
-        
         shouldInstallHelper {
             installed in
             if !installed {
@@ -68,6 +56,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             } else {
                 self.privilegedHelperInstalled = true
+                let helper = self.helperConnection()?.remoteObjectProxyWithErrorHandler { error in
+                    NSLog("Privileged XPC helper connection interrupted: \(error)")
+                } as! PrivilegedHelperProtocol
+                helper.getInstalledSmartDNSConfRevision { revision in
+                    NSLog("Current SmartDNSConfiguration installed revision: \(revision)")
+                    // We autoupdate smartDNSConf if installed but leave first installation to user
+                    if revision < UnblockUsAPI.SmartDNSConf.revision && revision != 0 {
+                        helper.installSmartDNSConf(revision: UnblockUsAPI.SmartDNSConf.revision,
+                                                   dns: UnblockUsAPI.SmartDNSConf.DNS,
+                                                   domains: UnblockUsAPI.SmartDNSConf.domains) { result, error_msg in
+                                                    if result {
+                                                        NSLog("SmartDNSConf successfully updated to revision: \(UnblockUsAPI.SmartDNSConf.revision)")
+                                                    } else {
+                                                        NSLog("SmartDNSConf update failed: \(error_msg)")
+                                                    }
+                        }
+                    }
+                }
             }
         }
 
@@ -84,7 +90,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Prefs = PrefManager.shared
         // Init update manager
         updateManager = UpdateManager.shared
-        updateManager.checkForUpdates()
+        updateManager.checkForUpdatesInBackground()
         // Init status bar menu controller
         statusBarMenuController = StatusBarMenuController()
         statusBarMenuController.showWindow(self)

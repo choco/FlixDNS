@@ -8,7 +8,7 @@
 		<string>anchor apple generic and identifier &quot;me.choco.FlixDNS-Privileged-XPC-Service&quot; and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = VJ8592T25A)</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>1.2.0</string>
 	<key>CFBundleName</key>
 	<string>FlixDNS-Privileged-Helper</string>
 	<key>CFBundleInfoDictionaryVersion</key>

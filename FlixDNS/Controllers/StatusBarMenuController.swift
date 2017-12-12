@@ -131,7 +131,9 @@ class StatusBarMenuController: NSWindowController, NSMenuDelegate {
                 NSLog("XPC Privileged Helper comunication failed")
                 self.setMenuItem(item: self.dnsItem, status: .Disabled)
                 } as! PrivilegedHelperProtocol
-            helper.installSmartDNSConf(UnblockUsAPI.SmartDNSConf) { result, error_msg in
+            helper.installSmartDNSConf(revision: UnblockUsAPI.SmartDNSConf.revision,
+                                       dns: UnblockUsAPI.SmartDNSConf.DNS,
+                                       domains: UnblockUsAPI.SmartDNSConf.domains) { result, error_msg in
                                     if result {
                                         NSLog("Resolver DNS directory created successfuly")
                                         helper.flushDNSCache(reply: {exit_code, output in

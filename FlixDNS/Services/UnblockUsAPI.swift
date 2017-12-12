@@ -168,7 +168,10 @@ class UnblockUsAPI {
     }
     
     private func unblockUsCall(endpoint: String, params: [String] = [], parse_data: @escaping (Data, (() -> Void)) -> Void, failed: @escaping () -> Void) {
-        let session = URLSession.shared
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        let session = URLSession.init(configuration: config)
         let auth_cookie = "_stored_email_=\(auth_email.addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!)"
         var url = "\(BASE_URL)\(endpoint)"
         if !params.isEmpty {

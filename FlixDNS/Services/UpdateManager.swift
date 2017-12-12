@@ -67,4 +67,10 @@ class UpdateManager : NSObject, SPUUpdaterDelegate {
             updater?.checkForUpdates()
         }
     }
+    
+    func checkForUpdatesInBackground() {
+        if startedUpdater {
+            updater?.checkForUpdatesInBackground()
+        }
+    }
 }

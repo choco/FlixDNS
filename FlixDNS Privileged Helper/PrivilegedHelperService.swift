@@ -7,15 +7,63 @@
 //
 
 import Foundation
+import ServiceManagement
 
-class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListenerDelegate{
+func getSecCodeIdInfo(_ secCode: SecStaticCode) -> (String, [SecCertificate])? {
+    var err: OSStatus
+    var cfInfo: CFDictionary?
+    
+    err = SecCodeCopySigningInformation(secCode, SecCSFlags(rawValue: kSecCSSigningInformation), &cfInfo)
+    if err != errSecSuccess { return nil }
+    
+    if let info = cfInfo as? [String: Any],
+        let identifier = info[kSecCodeInfoIdentifier as String] as? String,
+        let certificates = info[kSecCodeInfoCertificates as String] as? [SecCertificate] {
+        return (identifier, certificates)
+    }
+    return nil
+}
+
+func getPidSecCode(_ pid: pid_t) -> SecStaticCode? {
+    var err: OSStatus
+    var pidCode: SecCode?
+    let attr = [kSecGuestAttributePid: pid]
+    err = SecCodeCopyGuestWithAttributes(nil, attr as CFDictionary, SecCSFlags(rawValue: 0), &pidCode)
+    if (err != errSecSuccess) || (pidCode == nil) { return nil }
+    
+    return getCheckedStaticCode(dynamicCode: pidCode!)
+}
+
+func getSelfSecCode() -> SecStaticCode? {
+    var err: OSStatus
+    var me: SecCode?
+    err = SecCodeCopySelf(SecCSFlags(rawValue: 0), &me)
+    if (err != errSecSuccess) || (me == nil) { return nil }
+    
+    return getCheckedStaticCode(dynamicCode: me!)
+}
+
+private func getCheckedStaticCode(dynamicCode: SecCode) -> SecStaticCode? {
+    var err: OSStatus
+    var staticVersion: SecStaticCode?
+    let checkFlags = SecCSFlags(rawValue: kSecCSDoNotValidateResources | kSecCSCheckNestedCode)
+    err =  SecCodeCopyStaticCode(dynamicCode, SecCSFlags(rawValue: 0), &staticVersion)
+    if (err != errSecSuccess) || (staticVersion == nil) { return nil }
+    
+    err = SecStaticCodeCheckValidity(staticVersion!, checkFlags, nil)
+    if (err != errSecSuccess) { return nil }
+    return staticVersion!
+}
+
+class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListenerDelegate {
     private var connections = [NSXPCConnection]()
     private var listener:NSXPCListener
     private var shouldQuit = false
     private var shouldQuitCheckInterval = 1.0
     private let resolverDir = "/etc/resolver"
     private let configurationFile = "FlixDNS_conf"
-    
+    private let allowedIdentifiers = ["me.choco.FlixDNS"]
+
     override init(){
         self.listener = NSXPCListener(machServiceName:PrivilegedHelperConstants.machServiceName)
         super.init()
@@ -40,19 +88,19 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
      */
     func listener(_ listener:NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool
     {
-        
-        // MARK: Here a check should be added to verify the application that is calling the helper
-        // For example, checking that the codesigning is equal on the calling binary as this helper.
-        let interface = NSXPCInterface(with: PrivilegedHelperProtocol.self)
-        let sel = #selector(installSmartDNSConf(_:reply:))
-        let acceptedClassesSet = interface.classes(for: sel, argumentIndex: 0, ofReply: false)
-        let nssetVersion = NSSet(set: acceptedClassesSet)
-        // We need to pass through NSSet to add those WTF?!?!?
-        let nssetVersionModified = nssetVersion.addingObjects(from: [NSArray.self, NSString.self, NSNumber.self])
-        let finalSet = nssetVersionModified as Set
-        interface.setClasses(finalSet, for: sel, argumentIndex: 0, ofReply: false)
+        if let me = getSelfSecCode(),
+            let (_, ownCerts) = getSecCodeIdInfo(me),
+            let connCode = getPidSecCode(newConnection.processIdentifier),
+            let (connId, connCerts) = getSecCodeIdInfo(connCode) {
+            
+            // Check if certificates match and if connecting identifier is recognized
+            if ownCerts != connCerts { return false }
+            if !allowedIdentifiers.contains(connId) { return false }
+        } else {
+            return false
+        }
 
-        newConnection.exportedInterface = interface
+        newConnection.exportedInterface = NSXPCInterface(with: PrivilegedHelperProtocol.self)
         newConnection.exportedObject = self;
         newConnection.invalidationHandler = (() -> Void)? {
             if let indexValue = self.connections.index(of: newConnection) {
@@ -98,7 +146,7 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
         runTask(command: command, arguments: arguments, reply:reply)
     }
     
-    func installSmartDNSConf(_ smartDNSConf: SmartDNSConfiguration, reply: (Bool, String) -> Void) {
+    func installSmartDNSConf(revision: UInt, dns: [String], domains: [String], reply: (Bool, String) -> Void) {
         // If there's a conf installed remove it before installing new one
         if let conf = getInstalledSmartDNSConf() {
             if !removeInstalledSmartDNSConf(conf) {
@@ -106,6 +154,7 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
                 return
             }
         }
+        let smartDNSConf = SmartDNSConfiguration(revision: revision, DNS: dns, domains: domains)
         
         // Create /etc/resolver dir if not present
         if !directoryExistsAtPath(resolverDir) {
@@ -153,6 +202,47 @@ class PrivilegedHelperService: NSObject, PrivilegedHelperProtocol, NSXPCListener
         }
 
         reply(true, "SmartDNSConfiguration installed successfuly")
+    }
+    
+    func uninstallHelper(reply: (Bool, String) -> Void) {
+        // If there's a conf installed remove it before installing new one
+        if let conf = getInstalledSmartDNSConf() {
+            if !removeInstalledSmartDNSConf(conf) {
+                reply(false, "Couldn't remove previous smartDNSConf")
+                return
+            }
+        }
+        
+        // Remove plist and helper
+        let launchdPlistPath = "/Library/LaunchDaemons/\(PrivilegedHelperConstants.machServiceName).plist"
+        if FileManager.default.fileExists(atPath: launchdPlistPath) {
+            do {
+                try FileManager.default.removeItem(atPath: launchdPlistPath)
+            } catch {
+                reply(false, "Couldn't remove privileged tool launchd plist")
+                return
+            }
+        }
+        let privilegedToolPath = "/Library/PrivilegedHelperTools/\(PrivilegedHelperConstants.machServiceName)"
+        if FileManager.default.fileExists(atPath: privilegedToolPath) {
+            do {
+                try FileManager.default.removeItem(atPath: privilegedToolPath)
+            } catch {
+                reply(false, "Couldn't remove privileged tool executable")
+                return
+            }
+        }
+        
+        // Remove launchd job
+        DispatchQueue.main.asyncAfter(deadline: .now() + PrivilegedHelperConstants.shutDownTime) {
+            var cfError: Unmanaged<CFError>? = nil
+            if !SMJobRemove(kSMDomainSystemLaunchd, PrivilegedHelperConstants.machServiceName as CFString, nil, true, &cfError) {
+                let jobRemoveError = cfError!.takeRetainedValue() as Error
+                NSLog("Couldn't unload the job")
+            }
+        }
+
+        reply(true, "")
     }
     
     private func getInstalledSmartDNSConf() -> SmartDNSConfiguration? {
