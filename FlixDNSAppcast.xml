@@ -3,6 +3,15 @@
     <channel>
         <title>FlixDNS</title>
         <item>
+            <title>1.1.0</title>
+            <pubDate>Mon, 12 Dec 2017 19:15:00 +0100</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/choco/FlixDNS/releases/download/v1.1.0/FlixDNS.app.zip"
+                sparkle:version="18" sparkle:shortVersionString="1.1.0"
+                length="10462686" type="application/octet-stream"
+                sparkle:dsaSignature="MEQCIAHmxkRX9XdDSHEJ0FSN+zNvFWdbpdJX/RZuaIqVKykbAiBaexcLhPYZxRxVyWllVjqqMDyqo6N29Xh8JkXGHS1NSg=="/>
+        </item>
+        <item>
             <title>1.0.3</title>
             <pubDate>Mon, 04 Dec 2017 18:50:00 +0100</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
