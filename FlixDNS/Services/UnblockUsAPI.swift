@@ -22,6 +22,8 @@ class UnblockUsAPI {
             "209.107.219.5"
         ],
         domains: [
+            
+            "crackle.com",
             "hulu.com",
             "hbo.com",
             "hbogo.com",
